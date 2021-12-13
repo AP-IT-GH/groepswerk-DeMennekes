@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c7d0e599-9944-4603-8e2e-b43cc1887de0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +17,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BallDespawner.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="22E2FnAg3ZoZXGb8jvMD3hpd1PW" />
   <component name="ProjectViewState">
@@ -67,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1639388327895</updated>
       <workItem from="1639388328428" duration="6000" />
-      <workItem from="1639388358677" duration="2118000" />
+      <workItem from="1639388358677" duration="2465000" />
     </task>
     <servers />
   </component>
