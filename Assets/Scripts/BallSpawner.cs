@@ -1,61 +1,80 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
-    public float SpawnTimeLowerBound = 3.0f;
-    public float SpawnTimeHigherBound = 6.0f;
-    public GameObject SmallEnemy;
-    private float nextActionTime = 0.0f;
+    public string SpawnAxis = "z";
+    public float xPosition = 0;
+    public float yPosition = 10;
+    public float zPosition = 0;
+    private Vector3 Spawnpoint;
+    private float LeftMostSpawnArea = 0f;
+    private float RightMostSpawnArea = 10f;
+    public GameObject Ball;
+    private bool isAlive = false;
     
-    private GameObject Enemies;
+    private GameObject Balls;
     
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemy();
-
-        nextActionTime = GetRandomPeriod();
+        SpawnBall();
     }
 
-    private void SpawnEnemy()
+    private void SpawnBall()
     {
-        GameObject go = Instantiate(SmallEnemy, transform);
-        go.transform.SetParent(Enemies.transform);
+        SetSpawnPosition();
+        if (!isAlive)
+        {
+            GameObject go = Instantiate(Ball, transform);
+            go.transform.SetParent(Balls.transform);
+            isAlive = true;
+        }
+    }
+
+    private void SetSpawnPosition()
+    {
+        float random = Random.Range(LeftMostSpawnArea, RightMostSpawnArea);
+        Spawnpoint.x = xPosition;
+        Spawnpoint.y = yPosition;
+        Spawnpoint.z = zPosition;
+        switch (SpawnAxis)
+        {
+            case "x":
+                Spawnpoint.x = random;
+                break;
+            case "y":
+                Spawnpoint.y = random;
+                break;
+            default:
+                Spawnpoint.z = random;
+                break;
+        }
+
+        transform.localPosition = Spawnpoint;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (nextActionTime <= Time.time)
-        {
-            Debug.Log(nextActionTime);
-            SpawnEnemy();
-            
-            nextActionTime = Time.time + GetRandomPeriod();
-            
-            
-        }
+        
     }
 
-    float GetRandomPeriod()
+    public void ClearBalls()
     {
-        return Random.Range(SpawnTimeLowerBound, SpawnTimeHigherBound);
-    }
-    
-    private void OnEnable()
-    {
-        Enemies = transform.Find("Enemies").gameObject;
-    }
-    
-    public void ClearEnemies()
-    {
-        foreach (Transform enemy in Enemies.transform)
+        foreach (Transform ball in Balls.transform)
         {
-            GameObject.Destroy(enemy.gameObject);
+            GameObject.Destroy(ball.gameObject);
         }
 
+    }
+
+    public void DestroyBall()
+    {
+        ClearBalls();
+        isAlive = false;
     }
 }
