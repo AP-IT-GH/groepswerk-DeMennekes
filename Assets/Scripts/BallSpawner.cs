@@ -1,22 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using DefaultNamespace;
 using UnityEditor;
 using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
-    public string SpawnAxis = "z";
-    public float xPosition = 0;
-    public float yPosition = 10;
-    public float zPosition = 0;
+    public Axis SpawnAxis = Axis.X;
+    public GameObject Ball;
+    
+    private bool isAlive = false;
     private Vector3 Spawnpoint;
     private float LeftMostSpawnArea = 0f;
     private float RightMostSpawnArea = 10f;
-    public GameObject Ball;
-    private bool isAlive = false;
-    
     private GameObject Balls;
+    private float random;
     
     // Start is called before the first frame update
     void Start()
@@ -37,20 +36,18 @@ public class BallSpawner : MonoBehaviour
 
     private void SetSpawnPosition()
     {
-        float random = Random.Range(LeftMostSpawnArea, RightMostSpawnArea);
-        Spawnpoint.x = xPosition;
-        Spawnpoint.y = yPosition;
-        Spawnpoint.z = zPosition;
+        Spawnpoint = transform.localPosition;
+        random = Random.Range(LeftMostSpawnArea, RightMostSpawnArea);
         switch (SpawnAxis)
         {
-            case "x":
-                Spawnpoint.x = random;
+            case Axis.Y:
+                Spawnpoint.y = random;
                 break;
-            case "y":
+            case Axis.Z:
                 Spawnpoint.y = random;
                 break;
             default:
-                Spawnpoint.z = random;
+                Spawnpoint.x = random;
                 break;
         }
 
