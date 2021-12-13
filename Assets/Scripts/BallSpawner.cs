@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class BallSpawner : MonoBehaviour
 {
     public float SpawnTimeLowerBound = 3.0f;
     public float SpawnTimeHigherBound = 6.0f;
