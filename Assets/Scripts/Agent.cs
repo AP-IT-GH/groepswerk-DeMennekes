@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using TMPro;
 using Unity.Burst.Intrinsics;
 using Unity.MLAgents;
@@ -9,7 +10,9 @@ using UnityEngine;
 
 public class Agent : Unity.MLAgents.Agent
 {
+    public Axis moveAlong = Axis.X;
     public float movementRange = 10.0f;
+    public float movementSpeed = 1.0f;
     public TextMeshPro tmp;
     private Rigidbody rb;
     private Vector3 agentStartPosition;
@@ -22,7 +25,6 @@ public class Agent : Unity.MLAgents.Agent
         this.transform.localPosition = agentStartPosition;
         
         spawner.ClearBalls();
-        //DestroyEnemies();
     }
     
 
@@ -54,22 +56,15 @@ public class Agent : Unity.MLAgents.Agent
         var actionsDiscrete = actions.DiscreteActions;
         if (actionsDiscrete[0] == 1)
         {
-            
+            switch (moveAlong)
+            {
+                case Axis.X:
+                    transform.position -= movementSpeed * Time.deltaTime;
+            }
         }
         else if (actionsDiscrete[0] == 2)
         {
             
-        }
-        
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Collision");
-
-        if (collision.gameObject.CompareTag("Ball"))
-        {
-            AddReward(0.2f);
         }
     }
 }
