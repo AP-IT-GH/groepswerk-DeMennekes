@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using DefaultNamespace;
 using TMPro;
 using Unity.Burst.Intrinsics;
@@ -17,8 +18,6 @@ public class Agent : Unity.MLAgents.Agent
     private Rigidbody rb;
     private Vector3 agentStartPosition;
     public BallSpawner spawner;
-
-    private bool canJump = true;
 
     public override void OnEpisodeBegin()
     {
@@ -38,7 +37,7 @@ public class Agent : Unity.MLAgents.Agent
     // Update is called once per frame
     void Update()
     {
-        tmp.text = GetCumulativeReward().ToString();
+        tmp.text = GetCumulativeReward().ToString(CultureInfo.CurrentCulture);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -56,15 +55,15 @@ public class Agent : Unity.MLAgents.Agent
         var actionsDiscrete = actions.DiscreteActions;
         if (actionsDiscrete[0] == 1 && !IsAgentAtAMaximum())
         {
-            transform.position -= getMovementVector();
+            transform.position -= GetMovementVector();
         }
         else if (actionsDiscrete[0] == 2 && !IsAgentAtAMaximum())
         {
-            transform.position += getMovementVector();
+            transform.position += GetMovementVector();
         }
     }
 
-    private Vector3 getMovementVector()
+    private Vector3 GetMovementVector()
     {
         Vector3 movementVector = new Vector3();
         switch (moveAlong)
@@ -87,17 +86,22 @@ public class Agent : Unity.MLAgents.Agent
     {
         bool isAgentAtMaximum = false;
         var position = transform.position;
-        var radius = (goalWidth / 2.0f);
-        var negativeRadius = (goalWidth / -2.0f);
+        float radius, negativeRadius;
         switch (moveAlong)
         {
             case Axis.X:
+                radius = (goalWidth / 2.0f) + agentStartPosition.x;
+                negativeRadius = (goalWidth / -2.0f) + agentStartPosition.x;
                 isAgentAtMaximum = (position.x < negativeRadius || position.x > radius);
                 break;
             case Axis.Y:
+                radius = (goalWidth / 2.0f) + agentStartPosition.y;
+                negativeRadius = (goalWidth / -2.0f) + agentStartPosition.y;
                 isAgentAtMaximum = (position.y < negativeRadius || position.y > radius);
                 break;
             case Axis.Z:
+                radius = (goalWidth / 2.0f) + agentStartPosition.y;
+                negativeRadius = (goalWidth / -2.0f) + agentStartPosition.y;
                 isAgentAtMaximum = (position.z < negativeRadius || position.z > radius);
                 break;
         }
