@@ -8,6 +8,8 @@ public class BallDespawner : MonoBehaviour
     public float RewardOnGoal = -2.0f;
     public Agent agent;
     
+    private const string ENEMYTAG = "Ball";
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class BallDespawner : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision");
-        if (collision.gameObject.CompareTag("Ball"))
+        if (collision.gameObject.CompareTag(ENEMYTAG))
         {
             Debug.Log("With ball");
             Destroy(collision.gameObject);
