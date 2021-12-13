@@ -23,6 +23,12 @@ public class BallSpawner : MonoBehaviour
         SpawnBall();
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    
     private void SpawnBall()
     {
         SetSpawnPosition();
@@ -52,12 +58,6 @@ public class BallSpawner : MonoBehaviour
         }
 
         transform.localPosition = Spawnpoint;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ClearBalls()
