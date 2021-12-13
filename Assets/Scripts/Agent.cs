@@ -11,7 +11,7 @@ using UnityEngine;
 public class Agent : Unity.MLAgents.Agent
 {
     public Axis moveAlong = Axis.X;
-    public float movementRange = 10.0f;
+    public float goalWidth = 10.0f;
     public float movementSpeed = 1.0f;
     public TextMeshPro tmp;
     private Rigidbody rb;
@@ -54,17 +54,54 @@ public class Agent : Unity.MLAgents.Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         var actionsDiscrete = actions.DiscreteActions;
-        if (actionsDiscrete[0] == 1)
+        if (actionsDiscrete[0] == 1 && !IsAgentAtAMaximum())
         {
-            switch (moveAlong)
-            {
-                case Axis.X:
-                    transform.position -= movementSpeed * Time.deltaTime;
-            }
+            transform.position -= getMovementVector();
         }
-        else if (actionsDiscrete[0] == 2)
+        else if (actionsDiscrete[0] == 2 && !IsAgentAtAMaximum())
         {
-            
+            transform.position += getMovementVector();
         }
+    }
+
+    private Vector3 getMovementVector()
+    {
+        Vector3 movementVector = new Vector3();
+        switch (moveAlong)
+        {
+            case Axis.X:
+                movementVector = new Vector3(movementSpeed * Time.deltaTime, 0.0f, 0.0f);
+                break;
+            case Axis.Y:
+                movementVector = new Vector3(0.0f,movementSpeed * Time.deltaTime, 0.0f);
+                break;
+            case Axis.Z:
+                movementVector = new Vector3(0.0f, 0.0f ,movementSpeed * Time.deltaTime);
+                break;
+        }
+
+        return movementVector;
+    }
+
+    private bool IsAgentAtAMaximum()
+    {
+        bool isAgentAtMaximum = false;
+        var position = transform.position;
+        var radius = (goalWidth / 2.0f);
+        var negativeRadius = (goalWidth / -2.0f);
+        switch (moveAlong)
+        {
+            case Axis.X:
+                isAgentAtMaximum = (position.x < negativeRadius || position.x > radius);
+                break;
+            case Axis.Y:
+                isAgentAtMaximum = (position.y < negativeRadius || position.y > radius);
+                break;
+            case Axis.Z:
+                isAgentAtMaximum = (position.z < negativeRadius || position.z > radius);
+                break;
+        }
+
+        return isAgentAtMaximum;
     }
 }
