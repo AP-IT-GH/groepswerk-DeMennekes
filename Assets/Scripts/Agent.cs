@@ -23,7 +23,7 @@ public class Agent : Unity.MLAgents.Agent
     {
         this.transform.localPosition = agentStartPosition;
         
-        spawner.ClearBalls();
+        //spawner.ClearBalls();
     }
     
 
