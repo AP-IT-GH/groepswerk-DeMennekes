@@ -182,8 +182,31 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 1487016666374184546, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+--- !u!1 &341603603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4094373853651928688, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+  m_PrefabInstance: {fileID: 341603602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &341603604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341603603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89aacd53b7dd9e44787239b327c95377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RewardOnGoal: -2
+  agent: {fileID: 1956861238}
 --- !u!1 &877570907
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,3 +383,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1956861238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3157016943209104240, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+  m_PrefabInstance: {fileID: 341603602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150161c972fe6d94c9d8e474125aa1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

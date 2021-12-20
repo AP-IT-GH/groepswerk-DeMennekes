@@ -30,6 +30,7 @@ public class BallDespawner : MonoBehaviour
             Debug.Log("With ball");
             Destroy(collision.gameObject);
             agent.AddReward(RewardOnGoal);
+            agent.EndEpisode();
         }
     }
 }

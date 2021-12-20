@@ -171,11 +171,14 @@ public class Agent : Unity.MLAgents.Agent
         return movementVector;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (expr)
+        Debug.Log("Collision");
+        if (collision.gameObject.CompareTag("Ball"))
         {
-            throw new NotImplementedException();
+            Debug.Log("Ball caught");
+            AddReward(1f);
+            EndEpisode();
         }
     }
 }
