@@ -21,7 +21,7 @@ public class Agent : Unity.MLAgents.Agent
     private Vector3 agentStartPosition;
     private Vector3 agentPosition;
     private Vector3 defaultVector3 = new Vector3(0.0f, 0.0f, 0.0f);
-    private float startWidth, endWidth;
+    public float startWidth, endWidth;
     
     public BallSpawner spawner;
 
@@ -29,6 +29,7 @@ public class Agent : Unity.MLAgents.Agent
     {
         Debug.Log("Episode started");
         this.transform.localPosition = agentStartPosition;
+        spawner.SpawnBall();
         
         //spawner.ClearBalls();
     }
@@ -121,7 +122,7 @@ public class Agent : Unity.MLAgents.Agent
         return isAgentAtPositiveMax;
     }
 
-    private void SetPostPositions()
+    public void SetPostPositions()
     {
         switch (moveAlong)
         {
@@ -177,6 +178,7 @@ public class Agent : Unity.MLAgents.Agent
         if (collision.gameObject.CompareTag("Ball"))
         {
             Debug.Log("Ball caught");
+            Destroy(collision.gameObject);
             AddReward(1f);
             EndEpisode();
         }

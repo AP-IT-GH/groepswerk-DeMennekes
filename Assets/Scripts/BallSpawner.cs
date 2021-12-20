@@ -7,20 +7,19 @@ using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
-    public Axis SpawnAxis = Axis.X;
-    public GameObject Ball;
+    public GameObject ball;
+    public Agent agent;
     
-    private bool isAlive = false;
-    private Vector3 Spawnpoint;
-    private float LeftMostSpawnArea = 0f;
+    private Vector3 spawnVector;
+    private float LeftMostSpawnArea;
     private float RightMostSpawnArea = 10f;
-    private GameObject Balls;
     private float random;
+    private const string ENEMYTAG = "Ball";
     
     // Start is called before the first frame update
     void Start()
     {
-        //SpawnBall();
+        
     }
 
     // Update is called once per frame
@@ -29,50 +28,47 @@ public class BallSpawner : MonoBehaviour
         
     }
     
-    private void SpawnBall()
+    public void SpawnBall()
     {
-        SetSpawnPosition();
-        if (!isAlive)
-        {
-            GameObject go = Instantiate(Ball, transform);
-            go.transform.SetParent(Balls.transform);
-            isAlive = true;
-        }
+        Transform spawnPosition = SetSpawnPosition();
+        GameObject go = Instantiate(ball, spawnPosition);
+        Debug.Log("Ball spawned");
+        Debug.Log("------------");
     }
 
-    private void SetSpawnPosition()
+    private Transform SetSpawnPosition()
     {
-        Spawnpoint = transform.localPosition;
-        random = Random.Range(LeftMostSpawnArea, RightMostSpawnArea);
-        switch (SpawnAxis)
+        Transform spawnPosition = transform;
+        spawnVector = spawnPosition.localPosition;
+        Debug.Log("------------");
+        Debug.Log(spawnVector);
+        
+        agent.SetPostPositions();
+        LeftMostSpawnArea = agent.startWidth;
+        RightMostSpawnArea = agent.endWidth;
+        float goalWidth = LeftMostSpawnArea - RightMostSpawnArea;
+        
+        Debug.Log("LeftMostSpawnArea = " + LeftMostSpawnArea);
+        Debug.Log("RightMostSpawnArea = " + RightMostSpawnArea);
+        Debug.Log("agent.moveAlong = " + agent.moveAlong);
+        
+        random = Random.Range(0, goalWidth);
+        switch (agent.moveAlong)
         {
+            default:
+                spawnVector.x = random;
+                break;
             case Axis.Y:
-                Spawnpoint.y = random;
+                spawnVector.y = random;
                 break;
             case Axis.Z:
-                Spawnpoint.y = random;
-                break;
-            default:
-                Spawnpoint.x = random;
+                spawnVector.z = random;
                 break;
         }
-
-        transform.localPosition = Spawnpoint;
-    }
-
-    public void ClearBalls()
-    {
-        foreach (Transform ball in Balls.transform)
-        {
-            GameObject.Destroy(ball.gameObject);
-        }
-
-    }
-
-    public void DestroyBall()
-    {
-        ClearBalls();
-        isAlive = false;
+        Debug.Log(spawnVector);
+        spawnPosition.localPosition = spawnVector;
+        return spawnPosition;
+        // transform.localPosition = spawnpoint;
     }
     
     private void OnEnable()
