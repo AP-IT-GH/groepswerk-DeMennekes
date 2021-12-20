@@ -30,9 +30,11 @@ public class BallSpawner : MonoBehaviour
     
     public void SpawnBall()
     {
+        Debug.Log("------------");
+        
         Transform spawnPosition = SetSpawnPosition();
         GameObject go = Instantiate(ball, spawnPosition);
-        Debug.Log("Ball spawned");
+        
         Debug.Log("------------");
     }
 
@@ -40,19 +42,21 @@ public class BallSpawner : MonoBehaviour
     {
         Transform spawnPosition = transform;
         spawnVector = spawnPosition.localPosition;
-        Debug.Log("------------");
         Debug.Log(spawnVector);
         
         agent.SetPostPositions();
         LeftMostSpawnArea = agent.startWidth;
         RightMostSpawnArea = agent.endWidth;
-        float goalWidth = LeftMostSpawnArea - RightMostSpawnArea;
         
         Debug.Log("LeftMostSpawnArea = " + LeftMostSpawnArea);
         Debug.Log("RightMostSpawnArea = " + RightMostSpawnArea);
         Debug.Log("agent.moveAlong = " + agent.moveAlong);
         
-        random = Random.Range(0, goalWidth);
+        // if (goalWidth < 0)
+        //     goalWidth *= -1;
+        
+        random = Random.Range(LeftMostSpawnArea, RightMostSpawnArea);
+        Debug.Log("random = " + random);
         switch (agent.moveAlong)
         {
             default:
