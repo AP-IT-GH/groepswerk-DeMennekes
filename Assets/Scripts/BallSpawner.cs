@@ -74,4 +74,9 @@ public class BallSpawner : MonoBehaviour
         ClearBalls();
         isAlive = false;
     }
+    
+    private void OnEnable()
+    {
+        Balls = transform.Find("Balls").gameObject;
+    }
 }
