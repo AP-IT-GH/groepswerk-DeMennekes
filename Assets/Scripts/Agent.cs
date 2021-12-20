@@ -12,14 +12,17 @@ using UnityEngine;
 public class Agent : Unity.MLAgents.Agent
 {
     public Axis moveAlong = Axis.X;
-    public GameObject LeftPost;
-    public GameObject RightPost;
-
-
+    public GameObject leftPost;
+    public GameObject rightPost;
     public float movementSpeed = 2.0f;
     public TextMeshPro tmp;
+    
     private Rigidbody rb;
     private Vector3 agentStartPosition;
+    private Vector3 agentPosition;
+    private Vector3 defaultVector3 = new Vector3(0.0f, 0.0f, 0.0f);
+    private float startWidth, endWidth;
+    
     public BallSpawner spawner;
 
     public override void OnEpisodeBegin()
@@ -59,87 +62,120 @@ public class Agent : Unity.MLAgents.Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         var actionsDiscrete = actions.DiscreteActions;
-        if (actionsDiscrete[0] == 1 && !IsAgentAtAMaximum())
+        if (actionsDiscrete[0] == 1 && !IsAgentAtNegativeMax())
         {
             transform.localPosition -= GetMovementVector();
         }
         
-        if (actionsDiscrete[0] == 2 && !IsAgentAtAMaximum())
+        if (actionsDiscrete[0] == 2 && !IsAgentAtPositiveMax())
         {
             transform.localPosition += GetMovementVector();
         }
     }
-
-    private Vector3 GetMovementVector()
+    
+    private bool IsAgentAtNegativeMax()
     {
-        Vector3 movementVector = new Vector3();
+        bool isAgentAtNegativeMax = false;
+        float positionToUse = transform.localPosition.x;
+        
         switch (moveAlong)
         {
             case Axis.X:
-                movementVector = new Vector3(movementSpeed * Time.deltaTime, 0.0f, 0.0f);
+                positionToUse = transform.localPosition.x;
                 break;
             case Axis.Y:
-                movementVector = new Vector3(0.0f,movementSpeed * Time.deltaTime, 0.0f);
+                positionToUse = transform.localPosition.y;
                 break;
             case Axis.Z:
-                movementVector = new Vector3(0.0f, 0.0f ,movementSpeed * Time.deltaTime);
+                positionToUse = transform.localPosition.z;
+                break;
+        }
+        
+        SetPostPositions();
+        isAgentAtNegativeMax = (positionToUse < startWidth);
+        
+        return isAgentAtNegativeMax;
+    }
+    
+    private bool IsAgentAtPositiveMax()
+    {
+        bool isAgentAtPositiveMax = false;
+        float positionToUse = transform.localPosition.x;
+        
+        switch (moveAlong)
+        {
+            case Axis.X:
+                positionToUse = transform.localPosition.x;
+                break;
+            case Axis.Y:
+                positionToUse = transform.localPosition.y;
+                break;
+            case Axis.Z:
+                positionToUse = transform.localPosition.z;
+                break;
+        }
+        
+        SetPostPositions();
+        isAgentAtPositiveMax = (positionToUse > endWidth);
+        
+        return isAgentAtPositiveMax;
+    }
+
+    private void SetPostPositions()
+    {
+        switch (moveAlong)
+        {
+            default:
+                startWidth = leftPost.transform.localPosition.x;
+                endWidth = rightPost.transform.localPosition.x;
+                break;
+            case Axis.Y:
+                startWidth = leftPost.transform.localPosition.y;
+                endWidth = rightPost.transform.localPosition.y;
+                break;
+            
+            case Axis.Z:
+                startWidth = leftPost.transform.localPosition.z;
+                endWidth = rightPost.transform.localPosition.z;
+                break;
+        }
+
+        if (startWidth > endWidth)
+            SwapPlace();
+    }
+    
+    private void SwapPlace()
+    {
+        startWidth += endWidth;
+        endWidth = startWidth - endWidth;
+        startWidth -= endWidth;
+    }
+    
+    private Vector3 GetMovementVector()
+    {
+        Vector3 movementVector = defaultVector3;
+        
+        switch (moveAlong)
+        {
+            case Axis.X:
+                movementVector.x = movementSpeed * Time.deltaTime;
+                break;
+            case Axis.Y:
+                movementVector.y = movementSpeed * Time.deltaTime;
+                break;
+            case Axis.Z:
+                movementVector.z = movementSpeed * Time.deltaTime;
                 break;
         }
 
         return movementVector;
     }
 
-    private bool IsAgentAtAMaximum()
+    private void OnCollisionEnter(Collision other)
     {
-        bool isAgentAtMaximum = false;
-        var position = transform.localPosition;
-        float radius, negativeRadius, goalWidth = GetGoalWidth();
-        switch (moveAlong)
+        if (expr)
         {
-            case Axis.X:
-                radius = (goalWidth / 2.0f) + agentStartPosition.x;
-                negativeRadius = (goalWidth / -2.0f) + agentStartPosition.x;
-                isAgentAtMaximum = (position.x < negativeRadius || position.x > radius);
-                break;
-            case Axis.Y:
-                radius = (goalWidth / 2.0f) + agentStartPosition.y;
-                negativeRadius = (goalWidth / -2.0f) + agentStartPosition.y;
-                isAgentAtMaximum = (position.y < negativeRadius || position.y > radius);
-                break;
-            case Axis.Z:
-                radius = (goalWidth / 2.0f) + agentStartPosition.z;
-                negativeRadius = (goalWidth / -2.0f) + agentStartPosition.z;
-                isAgentAtMaximum = (position.z < negativeRadius || position.z > radius);
-                break;
+            throw new NotImplementedException();
         }
-
-        return isAgentAtMaximum;
-    }
-    
-    private float GetGoalWidth()
-    {
-        float result,startWidth, endWidth;
-        switch (moveAlong)
-        {
-            default:
-                startWidth = LeftPost.transform.localPosition.x;
-                endWidth = RightPost.transform.localPosition.x;
-                break;
-            case Axis.Y:
-                startWidth = LeftPost.transform.localPosition.y;
-                endWidth = RightPost.transform.localPosition.y;
-                break;
-            
-            case Axis.Z:
-                startWidth = LeftPost.transform.localPosition.z;
-                endWidth = RightPost.transform.localPosition.z;
-                break;
-        }
-
-        if (startWidth < endWidth)
-            result = endWidth - startWidth;
-        else
-            result = startWidth - endWidth;
-        return result;
     }
 }

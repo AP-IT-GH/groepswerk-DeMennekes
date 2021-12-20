@@ -10,8 +10,62 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/GoalEnvironment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/GoalEnvironment.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CodingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CodingScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test01.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test01/configuration.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test01/configuration.yaml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test01/run_logs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test01/run_logs/timers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test01/run_logs/timers.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test01/run_logs/training_status.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test01/run_logs/training_status.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test02.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test02/configuration.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test02/configuration.yaml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test02/run_logs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test02/run_logs/timers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test02/run_logs/timers.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test02/run_logs/training_status.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test02/run_logs/training_status.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test03.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test03/configuration.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test03/configuration.yaml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test03/run_logs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test03/run_logs/timers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test03/run_logs/timers.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test03/run_logs/training_status.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test03/run_logs/training_status.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test05.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test05/configuration.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test05/configuration.yaml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test05/run_logs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test05/run_logs/timers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test05/run_logs/timers.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test05/run_logs/training_status.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test05/run_logs/training_status.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test06.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test06/configuration.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test06/configuration.yaml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test06/run_logs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test06/run_logs/timers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test06/run_logs/timers.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test06/run_logs/training_status.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test06/run_logs/training_status.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test07.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test07/configuration.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test07/configuration.yaml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test07/run_logs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test07/run_logs/timers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test07/run_logs/timers.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test07/run_logs/training_status.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/Test07/run_logs/training_status.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/TestAgain01.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/TestAgain01/configuration.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/TestAgain01/configuration.yaml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/TestAgain01/run_logs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/TestAgain01/run_logs/timers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/TestAgain01/run_logs/timers.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/TestAgain01/run_logs/training_status.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/results/TestAgain01/run_logs/training_status.json.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +140,7 @@
       <workItem from="1639388358677" duration="4570000" />
       <workItem from="1639993588655" duration="778000" />
       <workItem from="1639994578241" duration="520000" />
-      <workItem from="1639996586217" duration="4876000" />
+      <workItem from="1639996586217" duration="8735000" />
     </task>
     <servers />
   </component>

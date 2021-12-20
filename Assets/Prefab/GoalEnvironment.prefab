@@ -739,21 +739,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: soccer_ball
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9d3a3363a8aed8e438fdf7abbfed8a67, type: 3}
+      propertyPath: m_TagString
+      value: Ball
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d3a3363a8aed8e438fdf7abbfed8a67, type: 3}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9d3a3363a8aed8e438fdf7abbfed8a67, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9d3a3363a8aed8e438fdf7abbfed8a67, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 9d3a3363a8aed8e438fdf7abbfed8a67, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d3a3363a8aed8e438fdf7abbfed8a67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -878,6 +870,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: fc656d7937ad4b84bb578540424ba2d6, type: 3}
   m_PrefabInstance: {fileID: 182887129681279280}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2725229531248550619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189888240290619449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  TakeActionsBetweenDecisions: 1
 --- !u!114 &3157016943209104240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,9 +900,9 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
-  moveAlong: 0
-  LeftPost: {fileID: 3401308729955104556}
-  RightPost: {fileID: 8144286641616690276}
+  moveAlong: 2
+  leftPost: {fileID: 3401308729955104556}
+  rightPost: {fileID: 8144286641616690276}
   movementSpeed: 1
   tmp: {fileID: 5627935322221279150}
   spawner: {fileID: 5895371574340186057}
@@ -917,8 +923,8 @@ MonoBehaviour:
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
-      BranchSizes: 01000000
-    VectorActionSize: 01000000
+      BranchSizes: 03000000
+    VectorActionSize: 03000000
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
