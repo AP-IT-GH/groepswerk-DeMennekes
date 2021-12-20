@@ -20,7 +20,7 @@ public class BallSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnBall();
+        //SpawnBall();
     }
 
     // Update is called once per frame
@@ -77,6 +77,6 @@ public class BallSpawner : MonoBehaviour
     
     private void OnEnable()
     {
-        Balls = transform.Find("Balls").gameObject;
+        //Balls = transform.Find("Balls").gameObject;
     }
 }

@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1639999334",
+        "python_version": "3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\woutv\\anaconda3\\envs\\mlagents\\Scripts\\mlagents-learn Keeper.yaml --run-id TestHeuristic04",
+        "mlagents_version": "0.27.0",
+        "mlagents_envs_version": "0.27.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.1+cu110",
+        "numpy_version": "1.21.4",
+        "end_time_seconds": "1639999347"
+    },
+    "total": 13.1961574,
+    "count": 1,
+    "self": 0.0047736000000000445,
+    "children": {
+        "run_training.setup": {
+            "total": 0.0703239000000001,
+            "count": 1,
+            "self": 0.0703239000000001
+        },
+        "TrainerController.start_learning": {
+            "total": 13.1210599,
+            "count": 1,
+            "self": 0.00031760000000247146,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 13.120726399999999,
+                    "count": 1,
+                    "self": 13.120726399999999
+                },
+                "trainer_threads": {
+                    "total": 7.999999986907369e-07,
+                    "count": 1,
+                    "self": 7.999999986907369e-07
+                },
+                "TrainerController._save_models": {
+                    "total": 1.5100000000600744e-05,
+                    "count": 1,
+                    "self": 1.5100000000600744e-05
+                }
+            }
+        }
+    }
+}

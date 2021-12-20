@@ -12,8 +12,11 @@ using UnityEngine;
 public class Agent : Unity.MLAgents.Agent
 {
     public Axis moveAlong = Axis.X;
-    public float goalWidth = 10.0f;
-    public float movementSpeed = 1.0f;
+    public GameObject LeftPost;
+    public GameObject RightPost;
+
+
+    public float movementSpeed = 2.0f;
     public TextMeshPro tmp;
     private Rigidbody rb;
     private Vector3 agentStartPosition;
@@ -21,12 +24,12 @@ public class Agent : Unity.MLAgents.Agent
 
     public override void OnEpisodeBegin()
     {
+        Debug.Log("Episode started");
         this.transform.localPosition = agentStartPosition;
         
         //spawner.ClearBalls();
     }
     
-
     // Start is called before the first frame update
     void Start()
     {
@@ -44,10 +47,13 @@ public class Agent : Unity.MLAgents.Agent
     {
         var actionsOutDiscrete = actionsOut.DiscreteActions;
         if (Input.GetKey(KeyCode.LeftArrow))
-            actionsOutDiscrete[0] = 1;
-        
-        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            actionsOutDiscrete[0] = 1; 
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
             actionsOutDiscrete[0] = 2;
+        }
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -55,11 +61,12 @@ public class Agent : Unity.MLAgents.Agent
         var actionsDiscrete = actions.DiscreteActions;
         if (actionsDiscrete[0] == 1 && !IsAgentAtAMaximum())
         {
-            transform.position -= GetMovementVector();
+            transform.localPosition -= GetMovementVector();
         }
-        else if (actionsDiscrete[0] == 2 && !IsAgentAtAMaximum())
+        
+        if (actionsDiscrete[0] == 2 && !IsAgentAtAMaximum())
         {
-            transform.position += GetMovementVector();
+            transform.localPosition += GetMovementVector();
         }
     }
 
@@ -85,8 +92,8 @@ public class Agent : Unity.MLAgents.Agent
     private bool IsAgentAtAMaximum()
     {
         bool isAgentAtMaximum = false;
-        var position = transform.position;
-        float radius, negativeRadius;
+        var position = transform.localPosition;
+        float radius, negativeRadius, goalWidth = GetGoalWidth();
         switch (moveAlong)
         {
             case Axis.X:
@@ -100,12 +107,39 @@ public class Agent : Unity.MLAgents.Agent
                 isAgentAtMaximum = (position.y < negativeRadius || position.y > radius);
                 break;
             case Axis.Z:
-                radius = (goalWidth / 2.0f) + agentStartPosition.y;
-                negativeRadius = (goalWidth / -2.0f) + agentStartPosition.y;
+                radius = (goalWidth / 2.0f) + agentStartPosition.z;
+                negativeRadius = (goalWidth / -2.0f) + agentStartPosition.z;
                 isAgentAtMaximum = (position.z < negativeRadius || position.z > radius);
                 break;
         }
 
         return isAgentAtMaximum;
+    }
+    
+    private float GetGoalWidth()
+    {
+        float result,startWidth, endWidth;
+        switch (moveAlong)
+        {
+            default:
+                startWidth = LeftPost.transform.localPosition.x;
+                endWidth = RightPost.transform.localPosition.x;
+                break;
+            case Axis.Y:
+                startWidth = LeftPost.transform.localPosition.y;
+                endWidth = RightPost.transform.localPosition.y;
+                break;
+            
+            case Axis.Z:
+                startWidth = LeftPost.transform.localPosition.z;
+                endWidth = RightPost.transform.localPosition.z;
+                break;
+        }
+
+        if (startWidth < endWidth)
+            result = endWidth - startWidth;
+        else
+            result = startWidth - endWidth;
+        return result;
     }
 }
