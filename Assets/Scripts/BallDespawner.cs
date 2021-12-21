@@ -22,7 +22,7 @@ public class BallDespawner : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Collision");
         if (collision.gameObject.CompareTag(ENEMYTAG))

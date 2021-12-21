@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2599509437494307419}
   m_Layer: 0
   m_Name: SoccerBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!135 &-2599509437494307419
 SphereCollider:
   m_ObjectHideFlags: 0

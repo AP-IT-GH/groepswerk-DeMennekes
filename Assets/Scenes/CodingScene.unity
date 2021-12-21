@@ -238,6 +238,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -17.46
       objectReference: {fileID: 0}
+    - target: {fileID: 2506314956663303290, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094373853651928688, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+      propertyPath: m_TagString
+      value: Despawner
+      objectReference: {fileID: 0}
     - target: {fileID: 4804822491143966513, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
       propertyPath: m_LocalPosition.z
       value: -30.48
@@ -253,6 +261,10 @@ PrefabInstance:
     - target: {fileID: 5184498791389925930, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
       propertyPath: m_LocalPosition.z
       value: -17.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278989564945942688, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5895371574340186057, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
       propertyPath: ball
@@ -425,6 +437,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1052859627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4094373853651928688, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+  m_PrefabInstance: {fileID: 341603602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1052859632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052859627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89aacd53b7dd9e44787239b327c95377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RewardOnGoal: -2
+  agent: {fileID: 1593766764}
+--- !u!1 &1593766761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8189888240290619449, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+  m_PrefabInstance: {fileID: 341603602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1593766764 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3157016943209104240, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+  m_PrefabInstance: {fileID: 341603602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593766761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150161c972fe6d94c9d8e474125aa1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1593766767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593766761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: RayPerceptionSensor
+  m_DetectableTags:
+  - Ball
+  m_RaysPerDirection: 6
+  m_MaxRayDegrees: 70
+  m_SphereCastRadius: 1.16
+  m_RayLength: 20
+  m_RayLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  m_ObservationStacks: 1
+  rayHitColor: {r: 1, g: 0, b: 0, a: 1}
+  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  m_StartVerticalOffset: 0
+  m_EndVerticalOffset: 0
 --- !u!1 &1682727331
 GameObject:
   m_ObjectHideFlags: 0
