@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - Despawner
+  - Environment
   layers:
   - Default
   - TransparentFX

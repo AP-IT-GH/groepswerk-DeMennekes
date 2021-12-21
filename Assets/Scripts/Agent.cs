@@ -28,7 +28,7 @@ public class Agent : Unity.MLAgents.Agent
     public override void OnEpisodeBegin()
     {
         Debug.Log("Episode started");
-        this.transform.localPosition = agentStartPosition;
+        this.transform.position = agentStartPosition;
         spawner.SpawnBall();
         
         //spawner.ClearBalls();
@@ -37,8 +37,27 @@ public class Agent : Unity.MLAgents.Agent
     // Start is called before the first frame update
     void Start()
     {
+        agentStartPosition = this.transform.position;
         rb = GetComponent<Rigidbody>();
-        agentStartPosition = this.transform.localPosition;
+        var rigidBodyConstraints = rb.constraints;
+        switch (moveAlong)
+        {
+            case Axis.X:
+                rigidBodyConstraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX |
+                                       RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY |
+                                       RigidbodyConstraints.FreezePositionZ;
+                break;
+            case Axis.Z:
+                rigidBodyConstraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX |
+                                       RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY |
+                                       RigidbodyConstraints.FreezePositionX;
+                break;
+            default:
+                rigidBodyConstraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX |
+                                       RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY |
+                                       RigidbodyConstraints.FreezePositionZ;
+                break;
+        }
     }
     
     // Update is called once per frame
@@ -65,30 +84,30 @@ public class Agent : Unity.MLAgents.Agent
         var actionsDiscrete = actions.DiscreteActions;
         if (actionsDiscrete[0] == 1 && !IsAgentAtNegativeMax())
         {
-            transform.localPosition -= GetMovementVector();
+            transform.position -= GetMovementVector();
         }
         
         if (actionsDiscrete[0] == 2 && !IsAgentAtPositiveMax())
         {
-            transform.localPosition += GetMovementVector();
+            transform.position += GetMovementVector();
         }
     }
     
     private bool IsAgentAtNegativeMax()
     {
         bool isAgentAtNegativeMax = false;
-        float positionToUse = transform.localPosition.x;
+        float positionToUse = transform.position.x;
         
         switch (moveAlong)
         {
             case Axis.X:
-                positionToUse = transform.localPosition.x;
+                positionToUse = transform.position.x;
                 break;
             case Axis.Y:
-                positionToUse = transform.localPosition.y;
+                positionToUse = transform.position.y;
                 break;
             case Axis.Z:
-                positionToUse = transform.localPosition.z;
+                positionToUse = transform.position.z;
                 break;
         }
         
@@ -101,18 +120,18 @@ public class Agent : Unity.MLAgents.Agent
     private bool IsAgentAtPositiveMax()
     {
         bool isAgentAtPositiveMax = false;
-        float positionToUse = transform.localPosition.x;
+        float positionToUse = transform.position.x;
         
         switch (moveAlong)
         {
             case Axis.X:
-                positionToUse = transform.localPosition.x;
+                positionToUse = transform.position.x;
                 break;
             case Axis.Y:
-                positionToUse = transform.localPosition.y;
+                positionToUse = transform.position.y;
                 break;
             case Axis.Z:
-                positionToUse = transform.localPosition.z;
+                positionToUse = transform.position.z;
                 break;
         }
         
@@ -127,17 +146,17 @@ public class Agent : Unity.MLAgents.Agent
         switch (moveAlong)
         {
             default:
-                startWidth = leftPost.transform.localPosition.x;
-                endWidth = rightPost.transform.localPosition.x;
+                startWidth = leftPost.transform.position.x;
+                endWidth = rightPost.transform.position.x;
                 break;
             case Axis.Y:
-                startWidth = leftPost.transform.localPosition.y;
-                endWidth = rightPost.transform.localPosition.y;
+                startWidth = leftPost.transform.position.y;
+                endWidth = rightPost.transform.position.y;
                 break;
             
             case Axis.Z:
-                startWidth = leftPost.transform.localPosition.z;
-                endWidth = rightPost.transform.localPosition.z;
+                startWidth = leftPost.transform.position.z;
+                endWidth = rightPost.transform.position.z;
                 break;
         }
 

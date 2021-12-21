@@ -14,7 +14,6 @@ public class BallSpawner : MonoBehaviour
     private float LeftMostSpawnArea;
     private float RightMostSpawnArea = 10f;
     private float random;
-    private const string ENEMYTAG = "Ball";
     
     // Start is called before the first frame update
     void Start()
@@ -32,18 +31,20 @@ public class BallSpawner : MonoBehaviour
     {
         Debug.Log("------------");
         
-        Transform spawnPosition = SetSpawnPosition();
-        GameObject go = Instantiate(ball, spawnPosition.localPosition, transform.rotation);
+        Vector3 spawnPosition = GetLocalSpawnPosition();
+        Debug.Log($"local position: {spawnPosition}");
+        GameObject go = Instantiate(ball, spawnPosition, transform.localRotation);
         //GameObject go = Instantiate(ball, transform);
         go.transform.SetParent(this.transform);
         
         Debug.Log("------------");
     }
 
-    private Transform SetSpawnPosition()
+    private Vector3 GetLocalSpawnPosition()
     {
-        Transform spawnPosition = transform;
-        spawnVector = spawnPosition.localPosition;
+        var localPosition = transform.localPosition;
+        Debug.Log($"current local pos: {localPosition}");
+        spawnVector = new Vector3(localPosition.x, y: localPosition.y, localPosition.z);
         
         Debug.Log(spawnVector);
         
@@ -54,10 +55,7 @@ public class BallSpawner : MonoBehaviour
         Debug.Log("LeftMostSpawnArea = " + LeftMostSpawnArea);
         Debug.Log("RightMostSpawnArea = " + RightMostSpawnArea);
         Debug.Log("agent.moveAlong = " + agent.moveAlong);
-        
-        // if (goalWidth < 0)
-        //     goalWidth *= -1;
-        
+
         random = Random.Range(LeftMostSpawnArea, RightMostSpawnArea);
         Debug.Log("random = " + random);
         switch (agent.moveAlong)
@@ -71,10 +69,7 @@ public class BallSpawner : MonoBehaviour
                 spawnVector.x = random;
                 break;
         }
-        Debug.Log(spawnVector);
-        spawnPosition.localPosition = spawnVector;
-        return spawnPosition;
-        // transform.localPosition = spawnpoint;
+        return spawnVector;
     }
     
     private void OnEnable()
