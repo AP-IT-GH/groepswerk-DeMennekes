@@ -33,7 +33,9 @@ public class BallSpawner : MonoBehaviour
         Debug.Log("------------");
         
         Transform spawnPosition = SetSpawnPosition();
-        GameObject go = Instantiate(ball, spawnPosition);
+        GameObject go = Instantiate(ball, spawnPosition.localPosition, transform.rotation);
+        //GameObject go = Instantiate(ball, transform);
+        go.transform.SetParent(this.transform);
         
         Debug.Log("------------");
     }
@@ -42,6 +44,7 @@ public class BallSpawner : MonoBehaviour
     {
         Transform spawnPosition = transform;
         spawnVector = spawnPosition.localPosition;
+        
         Debug.Log(spawnVector);
         
         agent.SetPostPositions();
@@ -59,14 +62,13 @@ public class BallSpawner : MonoBehaviour
         Debug.Log("random = " + random);
         switch (agent.moveAlong)
         {
-            default:
-                spawnVector.x = random;
-                break;
-            case Axis.Y:
-                spawnVector.y = random;
-                break;
             case Axis.Z:
+                Debug.Log("Z branch");
                 spawnVector.z = random;
+                break;
+            default:
+                Debug.Log("X branch");
+                spawnVector.x = random;
                 break;
         }
         Debug.Log(spawnVector);
