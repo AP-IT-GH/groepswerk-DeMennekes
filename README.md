@@ -32,7 +32,7 @@ Om het project tot een goed einde te brengen zullen er een aantal zaken klaargez
 ### Software
 Om het project te kunnen bouwen zullen we gebruik maken van Unity als development platform. Om machine learning te integreren maken we gebruik van het ML-Agents package. Zorg er voor dat deze beide zeker geïnstalleerd zijn voordat je verder gaat met de volgende stappen. 
 ### Voorinstallatie
-Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de asset store genaamd 
+Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de asset store genaamd …. . Je kan deze in de asset store installeren en vervolgens toevoegen in jouw Unity project. 
 <br>
 
 ## Spelverloop <a name="spelverloop"></a>
