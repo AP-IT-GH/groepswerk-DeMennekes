@@ -21,22 +21,28 @@
     - [Resultaten](#resultaten)
 7. [Conclusie](#conclusie)
 
+<br>
 
 ## Introductie <a name="introductie"></a>
-...
+
+<br>
 
 ## Nodige software en voorinstallatie <a name="benodigdheden"></a>
 ### Software
 ### Voorinstallatie
 
+<br>
+
 ## Spelverloop <a name="spelverloop"></a>
-...
+
+<br>
 
 ## De spelomgeving <a name="spelomgeving"></a>
-...
 ### Player <a name="player"></a>
 ### AI Agent <a name="agent"></a>
 ### Doel <a name="doel"></a>
+
+<br>
 
 ## Scripts <a name="allescripts"></a>
 ### Agent.cs <a name="agentscript"></a>
@@ -44,10 +50,14 @@
 ### BallDespawner.cs <a name="despawnerscript"></a>
 ### BallSpawner.cs <a name="spawnerscript"></a>
 
+<br>
+
 ## Training <a name="training"></a>
 ### Anaconda <a name="anaconda"></a>
 ### Configuratie <a name="configuratie"></a>
 ### Tensorboard <a name="tensorboard"></a>
 ### Resultaten <a name="resultaten"></a>
+
+<br>
 
 ## Conclusie <a name="conclusie"></a>
