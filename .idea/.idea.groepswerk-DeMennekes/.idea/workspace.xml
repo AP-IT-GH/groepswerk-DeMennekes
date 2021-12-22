@@ -7,9 +7,13 @@
     <list default="true" id="c7d0e599-9944-4603-8e2e-b43cc1887de0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ML-Agents/Timers/CodingScene_timers.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ML-Agents/Timers/CodingScene_timers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/GoalEnvironment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/GoalEnvironment.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefab/SoccerBall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/SoccerBall.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CodingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CodingScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Training/Keeper.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Training/Keeper.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/Open XR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/Open XR Package Settings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +33,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/da6ab58261ca4bf88d2245fa0b5e29ff18000/f7/05a497c0/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../jumper-assignment-Wovi10/Library/PackageCache/com.unity.ml-agents@2.0.0/Runtime/DecisionRequester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BallDespawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../jumper-assignment-Wovi10/Assets/Scripts/EnemySpawner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../jumper-assignment-Wovi10/Assets/Scripts/VelociAgent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/da6ab58261ca4bf88d2245fa0b5e29ff18000/7b/e606789b/ForceMode.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="22E2FnAg3ZoZXGb8jvMD3hpd1PW" />
   <component name="ProjectViewState">
@@ -88,6 +94,8 @@
       <workItem from="1639994578241" duration="520000" />
       <workItem from="1639996586217" duration="15046000" />
       <workItem from="1640072165792" duration="2480000" />
+      <workItem from="1640181353115" duration="41000" />
+      <workItem from="1640181425796" duration="4129000" />
     </task>
     <servers />
   </component>

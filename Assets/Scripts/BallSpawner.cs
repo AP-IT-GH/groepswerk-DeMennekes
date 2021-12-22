@@ -14,6 +14,7 @@ public class BallSpawner : MonoBehaviour
     private float LeftMostSpawnArea;
     private float RightMostSpawnArea = 10f;
     private float random;
+    private Rigidbody rb;
     
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class BallSpawner : MonoBehaviour
         GameObject go = Instantiate(ball, spawnPosition, transform.localRotation);
         //GameObject go = Instantiate(ball, transform);
         go.transform.SetParent(this.transform);
+        go.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, -5f, 0f), ForceMode.VelocityChange);
         
         Debug.Log("------------");
     }
@@ -51,27 +53,28 @@ public class BallSpawner : MonoBehaviour
         agent.SetPostPositions();
         LeftMostSpawnArea = agent.startWidth;
         RightMostSpawnArea = agent.endWidth;
-        
-        Debug.Log("LeftMostSpawnArea = " + LeftMostSpawnArea);
-        Debug.Log("RightMostSpawnArea = " + RightMostSpawnArea);
-        Debug.Log("agent.moveAlong = " + agent.moveAlong);
 
         random = Random.Range(LeftMostSpawnArea, RightMostSpawnArea);
-        Debug.Log("random = " + random);
         switch (agent.moveAlong)
         {
             case Axis.Z:
-                Debug.Log("Z branch");
                 spawnVector.z = random;
                 break;
             default:
-                Debug.Log("X branch");
                 spawnVector.x = random;
                 break;
         }
         return spawnVector;
     }
-    
+
+    public void ClearEnemies()
+    {
+        foreach (Transform ball in this.transform)
+        {
+            GameObject.Destroy(ball.gameObject);
+        }
+
+    }
     private void OnEnable()
     {
         //Balls = transform.Find("Balls").gameObject;

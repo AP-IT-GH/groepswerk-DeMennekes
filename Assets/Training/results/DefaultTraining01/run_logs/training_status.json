@@ -1,0 +1,29 @@
+{
+    "Keeper": {
+        "checkpoints": [
+            {
+                "steps": 1863,
+                "file_path": "results\\DefaultTraining01\\Keeper\\Keeper-1863.onnx",
+                "reward": -1.4,
+                "creation_time": 1640182516.2586772,
+                "auxillary_file_paths": [
+                    "results\\DefaultTraining01\\Keeper\\Keeper-1863.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1863,
+            "file_path": "results\\DefaultTraining01\\Keeper.onnx",
+            "reward": -1.4,
+            "creation_time": 1640182516.2586772,
+            "auxillary_file_paths": [
+                "results\\DefaultTraining01\\Keeper\\Keeper-1863.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

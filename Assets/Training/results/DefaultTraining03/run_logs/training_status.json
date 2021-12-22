@@ -1,0 +1,65 @@
+{
+    "Keeper": {
+        "checkpoints": [
+            {
+                "steps": 499997,
+                "file_path": "results\\DefaultTraining03\\Keeper\\Keeper-499997.onnx",
+                "reward": null,
+                "creation_time": 1640184654.9700391,
+                "auxillary_file_paths": [
+                    "results\\DefaultTraining03\\Keeper\\Keeper-499997.pt"
+                ]
+            },
+            {
+                "steps": 500054,
+                "file_path": "results\\DefaultTraining03\\Keeper\\Keeper-500054.onnx",
+                "reward": null,
+                "creation_time": 1640184655.0175514,
+                "auxillary_file_paths": [
+                    "results\\DefaultTraining03\\Keeper\\Keeper-500054.pt"
+                ]
+            },
+            {
+                "steps": 500057,
+                "file_path": "results\\DefaultTraining03\\Keeper\\Keeper-500057.onnx",
+                "reward": null,
+                "creation_time": 1640184836.5478234,
+                "auxillary_file_paths": [
+                    "results\\DefaultTraining03\\Keeper\\Keeper-500057.pt"
+                ]
+            },
+            {
+                "steps": 999999,
+                "file_path": "results\\DefaultTraining03\\Keeper\\Keeper-999999.onnx",
+                "reward": null,
+                "creation_time": 1640185857.0920987,
+                "auxillary_file_paths": [
+                    "results\\DefaultTraining03\\Keeper\\Keeper-999999.pt"
+                ]
+            },
+            {
+                "steps": 1000029,
+                "file_path": "results\\DefaultTraining03\\Keeper\\Keeper-1000029.onnx",
+                "reward": -2.0,
+                "creation_time": 1640185857.1265085,
+                "auxillary_file_paths": [
+                    "results\\DefaultTraining03\\Keeper\\Keeper-1000029.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000029,
+            "file_path": "results\\DefaultTraining03\\Keeper.onnx",
+            "reward": -2.0,
+            "creation_time": 1640185857.1265085,
+            "auxillary_file_paths": [
+                "results\\DefaultTraining03\\Keeper\\Keeper-1000029.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

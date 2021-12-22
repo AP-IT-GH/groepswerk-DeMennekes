@@ -14,7 +14,7 @@ public class Agent : Unity.MLAgents.Agent
     public Axis moveAlong = Axis.X;
     public GameObject leftPost;
     public GameObject rightPost;
-    public float movementSpeed = 2.0f;
+    public float movementSpeed;
     public TextMeshPro tmp;
     
     private Rigidbody rb;
@@ -197,7 +197,8 @@ public class Agent : Unity.MLAgents.Agent
         if (collision.gameObject.CompareTag("Ball"))
         {
             Debug.Log("Ball caught");
-            Destroy(collision.gameObject);
+            spawner.ClearEnemies();
+            // Destroy(collision.gameObject);
             AddReward(1f);
             EndEpisode();
         }
