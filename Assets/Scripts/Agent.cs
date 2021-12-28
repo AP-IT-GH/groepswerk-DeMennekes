@@ -23,6 +23,7 @@ public class Agent : Unity.MLAgents.Agent
     private Vector3 agentStartPosition;
     private Vector3 agentPosition;
     private Vector3 defaultVector3 = new Vector3(0.0f, 0.0f, 0.0f);
+    private const string ENEMYTAG = "Ball";
 
     public BallSpawner spawner;
 
@@ -187,7 +188,7 @@ public class Agent : Unity.MLAgents.Agent
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ball"))
+        if (collision.gameObject.CompareTag(ENEMYTAG))
         {
             spawner.ClearEnemies();
             AddReward(RewardOnCatch);

@@ -11,23 +11,10 @@ public class BallSpawner : MonoBehaviour
     public Agent agent;
     
     private Vector3 spawnVector;
-    private float LeftMostSpawnArea;
-    private float RightMostSpawnArea = 10f;
+    private float leftMostSpawnArea, rightMostSpawnArea;
     private float random;
     private Rigidbody rb;
     private float force = 15f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     public void SpawnBall()
     {
@@ -60,10 +47,10 @@ public class BallSpawner : MonoBehaviour
         Debug.Log(spawnVector);
         
         agent.SetPostPositions();
-        LeftMostSpawnArea = agent.leftPosition;
-        RightMostSpawnArea = agent.rightPosition;
+        leftMostSpawnArea = agent.leftPosition;
+        rightMostSpawnArea = agent.rightPosition;
 
-        random = Random.Range(LeftMostSpawnArea, RightMostSpawnArea);
+        random = Random.Range(leftMostSpawnArea, rightMostSpawnArea);
         switch (agent.movingAxis)
         {
             case Axis.Z:
