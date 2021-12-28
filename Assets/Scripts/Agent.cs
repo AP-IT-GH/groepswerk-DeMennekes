@@ -23,7 +23,7 @@ public class Agent : Unity.MLAgents.Agent
     private Vector3 agentStartPosition;
     private Vector3 agentPosition;
     private Vector3 defaultVector3 = new Vector3(0.0f, 0.0f, 0.0f);
-    public float startWidth, endWidth;
+    public float leftWidth, rightWidth;
 
     public BallSpawner spawner;
 
@@ -73,7 +73,7 @@ public class Agent : Unity.MLAgents.Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        var actionsOutDiscrete = actionsOut.DiscreteActions;
+        ActionSegment<int> actionsOutDiscrete = actionsOut.DiscreteActions;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             actionsOutDiscrete[0] = 1;
@@ -87,18 +87,21 @@ public class Agent : Unity.MLAgents.Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         var actionsDiscrete = actions.DiscreteActions;
-        if (actionsDiscrete[0] == 1 && !IsAgentAtPositiveMax())
+        
+        bool moveLeft = (actionsDiscrete[0] == 1);
+        bool moveRight = (actionsDiscrete[0] == 2);
+        
+        if (moveLeft && !IsAgentAtLeftMax())
         {
             transform.position -= GetMovementVector();
         }
-
-        if (actionsDiscrete[0] == 2 && !IsAgentAtNegativeMax())
+        if (moveRight && !IsAgentAtRightMax())
         {
             transform.position += GetMovementVector();
         }
     }
 
-    private bool IsAgentAtNegativeMax()
+    private bool IsAgentAtLeftMax()
     {
         bool isAgentAtNegativeMax = false;
         float positionToUse = transform.position.x;
@@ -117,12 +120,12 @@ public class Agent : Unity.MLAgents.Agent
         }
 
         SetPostPositions();
-        isAgentAtNegativeMax = (positionToUse < startWidth);
+        isAgentAtNegativeMax = (positionToUse < leftWidth);
 
         return isAgentAtNegativeMax;
     }
 
-    private bool IsAgentAtPositiveMax()
+    private bool IsAgentAtRightMax()
     {
         bool isAgentAtPositiveMax = false;
         float positionToUse = transform.position.x;
@@ -141,7 +144,7 @@ public class Agent : Unity.MLAgents.Agent
         }
 
         SetPostPositions();
-        isAgentAtPositiveMax = (positionToUse > endWidth);
+        isAgentAtPositiveMax = (positionToUse > rightWidth);
 
         return isAgentAtPositiveMax;
     }
@@ -151,29 +154,29 @@ public class Agent : Unity.MLAgents.Agent
         switch (moveAlong)
         {
             default:
-                startWidth = leftPost.transform.position.x;
-                endWidth = rightPost.transform.position.x;
+                leftWidth = leftPost.transform.position.x;
+                rightWidth = rightPost.transform.position.x;
                 break;
             case Axis.Y:
-                startWidth = leftPost.transform.position.y;
-                endWidth = rightPost.transform.position.y;
+                leftWidth = leftPost.transform.position.y;
+                rightWidth = rightPost.transform.position.y;
                 break;
 
             case Axis.Z:
-                startWidth = leftPost.transform.position.z;
-                endWidth = rightPost.transform.position.z;
+                leftWidth = leftPost.transform.position.z;
+                rightWidth = rightPost.transform.position.z;
                 break;
         }
 
-        if (startWidth > endWidth)
+        if (leftWidth > rightWidth)
             SwapPlace();
     }
 
     private void SwapPlace()
     {
-        startWidth += endWidth;
-        endWidth = startWidth - endWidth;
-        startWidth -= endWidth;
+        leftWidth += rightWidth;
+        rightWidth = leftWidth - rightWidth;
+        leftWidth -= rightWidth;
     }
 
     private Vector3 GetMovementVector()
