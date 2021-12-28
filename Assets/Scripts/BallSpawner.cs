@@ -15,6 +15,7 @@ public class BallSpawner : MonoBehaviour
     private float RightMostSpawnArea = 10f;
     private float random;
     private Rigidbody rb;
+    private float force = 15f;
     
     // Start is called before the first frame update
     void Start()
@@ -32,9 +33,22 @@ public class BallSpawner : MonoBehaviour
     {
         Vector3 spawnPosition = GetLocalSpawnPosition();
         GameObject go = Instantiate(ball, spawnPosition, transform.localRotation);
-        //GameObject go = Instantiate(ball, transform);
+        
         go.transform.SetParent(this.transform);
-        go.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, -5f, 0f), ForceMode.Impulse);
+        GiveForce(go);
+    }
+
+    private void GiveForce(GameObject go)
+    {
+        switch (agent.moveAlong)
+        {
+            case Axis.Z:
+                go.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(force, 0f, 0f), ForceMode.VelocityChange);
+                break;
+            default:
+                go.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, force), ForceMode.VelocityChange);
+                break;
+        }
     }
 
     private Vector3 GetLocalSpawnPosition()

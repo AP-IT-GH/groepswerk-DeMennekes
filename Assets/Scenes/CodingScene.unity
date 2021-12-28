@@ -192,15 +192,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 182887129186753644, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 182887129186753644, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 182887129186753644, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 182887129186753644, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -233,6 +233,14 @@ PrefabInstance:
     - target: {fileID: 182887131263804523, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
       propertyPath: m_TagString
       value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157016943209104240, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+      propertyPath: moveAlong
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157016943209104240, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+      propertyPath: movementSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4094373853651928688, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
       propertyPath: m_TagString

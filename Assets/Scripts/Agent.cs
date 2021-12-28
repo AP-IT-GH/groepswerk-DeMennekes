@@ -25,41 +25,46 @@ public class Agent : Unity.MLAgents.Agent
     
     public BallSpawner spawner;
 
-    public override void OnEpisodeBegin()
-    {
-        Debug.Log("Episode started");
-        this.transform.position = agentStartPosition;
-        spawner.SpawnBall();
-        
-        //spawner.ClearBalls();
-    }
-    
     // Start is called before the first frame update
     void Start()
     {
         agentStartPosition = this.transform.position;
+
+        SetAgentConstraints(); // Can agent rotate or move?
+    }
+    
+    public override void OnEpisodeBegin()
+    {
+        this.transform.position = agentStartPosition;
+        spawner.SpawnBall();
+    }
+    
+
+    private void SetAgentConstraints()
+    {
         rb = GetComponent<Rigidbody>();
-        var rigidBodyConstraints = rb.constraints;
+        RigidbodyConstraints rigidBodyConstraints = rb.constraints;
+        RigidbodyConstraints freezeRotations = RigidbodyConstraints.FreezeRotationY |
+                                               RigidbodyConstraints.FreezeRotationX |
+                                               RigidbodyConstraints.FreezeRotationZ;
+        RigidbodyConstraints freezePositionY = RigidbodyConstraints.FreezePositionY;
+        RigidbodyConstraints defaultFreezes = freezeRotations | freezePositionY;
+
         switch (moveAlong)
         {
-            case Axis.X:
-                rigidBodyConstraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX |
-                                       RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY |
-                                       RigidbodyConstraints.FreezePositionZ;
-                break;
             case Axis.Z:
-                rigidBodyConstraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX |
-                                       RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY |
+                rigidBodyConstraints = defaultFreezes |
                                        RigidbodyConstraints.FreezePositionX;
                 break;
             default:
-                rigidBodyConstraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX |
-                                       RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY |
+                rigidBodyConstraints = defaultFreezes |
                                        RigidbodyConstraints.FreezePositionZ;
                 break;
         }
+
+        rb.constraints = rigidBodyConstraints;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -82,12 +87,12 @@ public class Agent : Unity.MLAgents.Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         var actionsDiscrete = actions.DiscreteActions;
-        if (actionsDiscrete[0] == 1 && !IsAgentAtNegativeMax())
+        if (actionsDiscrete[0] == 1 && !IsAgentAtPositiveMax())
         {
             transform.position -= GetMovementVector();
         }
         
-        if (actionsDiscrete[0] == 2 && !IsAgentAtPositiveMax())
+        if (actionsDiscrete[0] == 2 && !IsAgentAtNegativeMax())
         {
             transform.position += GetMovementVector();
         }

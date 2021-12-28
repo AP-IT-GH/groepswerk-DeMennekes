@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7d0e599-9944-4603-8e2e-b43cc1887de0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ML-Agents/Timers/CodingScene_timers.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ML-Agents/Timers/CodingScene_timers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ML-Agents/Timers/VRSetUp_timers.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ML-Agents/Timers/VRSetUp_timers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/GoalEnvironment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/GoalEnvironment.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CodingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CodingScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +31,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../jumper-assignment-Wovi10/Assets/Scripts/VelociAgent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/da6ab58261ca4bf88d2245fa0b5e29ff18000/62/a9c21c63/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../jumper-assignment-Wovi10/Library/PackageCache/com.unity.ml-agents@2.0.0/Runtime/DecisionRequester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BallDespawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -91,7 +97,7 @@
       <workItem from="1640072165792" duration="2480000" />
       <workItem from="1640181353115" duration="41000" />
       <workItem from="1640181425796" duration="4129000" />
-      <workItem from="1640700062467" duration="439000" />
+      <workItem from="1640700062467" duration="5559000" />
     </task>
     <servers />
   </component>
