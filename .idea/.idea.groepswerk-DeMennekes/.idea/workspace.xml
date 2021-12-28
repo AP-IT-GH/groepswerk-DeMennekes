@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7d0e599-9944-4603-8e2e-b43cc1887de0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" afterDir="false" />
-    </list>
+    <list default="true" id="c7d0e599-9944-4603-8e2e-b43cc1887de0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +90,7 @@
       <workItem from="1640181353115" duration="41000" />
       <workItem from="1640181425796" duration="4129000" />
       <workItem from="1640700062467" duration="5815000" />
-      <workItem from="1640706319523" duration="1725000" />
+      <workItem from="1640706319523" duration="1907000" />
     </task>
     <servers />
   </component>
