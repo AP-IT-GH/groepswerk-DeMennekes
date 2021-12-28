@@ -34,7 +34,7 @@ public class BallSpawner : MonoBehaviour
         GameObject go = Instantiate(ball, spawnPosition, transform.localRotation);
         //GameObject go = Instantiate(ball, transform);
         go.transform.SetParent(this.transform);
-        go.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, -5f, 0f), ForceMode.VelocityChange);
+        go.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, -5f, 0f), ForceMode.Impulse);
     }
 
     private Vector3 GetLocalSpawnPosition()

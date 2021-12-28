@@ -1,0 +1,3 @@
+Default04 -> speed 3
+Default05 -> Ray degree 27
+Default06 -> RayLength 11, cast radius 0.48, end offset 0.5
