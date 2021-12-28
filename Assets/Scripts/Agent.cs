@@ -23,7 +23,7 @@ public class Agent : Unity.MLAgents.Agent
     private Vector3 agentStartPosition;
     private Vector3 agentPosition;
     private Vector3 defaultVector3 = new Vector3(0.0f, 0.0f, 0.0f);
-    public float leftWidth, rightWidth;
+    public float leftPosition, rightPosition;
 
     public BallSpawner spawner;
 
@@ -117,7 +117,7 @@ public class Agent : Unity.MLAgents.Agent
         }
 
         SetPostPositions();
-        isAgentAtLeftMax = (positionToUse < leftWidth);
+        isAgentAtLeftMax = (positionToUse < leftPosition);
 
         return isAgentAtLeftMax;
     }
@@ -138,7 +138,7 @@ public class Agent : Unity.MLAgents.Agent
         }
 
         SetPostPositions();
-        isAgentAtRightMax = (positionToUse > rightWidth);
+        isAgentAtRightMax = (positionToUse > rightPosition);
 
         return isAgentAtRightMax;
     }
@@ -147,30 +147,25 @@ public class Agent : Unity.MLAgents.Agent
     {
         switch (movingAxis)
         {
+            case Axis.X:
+                leftPosition = leftPost.transform.position.x;
+                rightPosition = rightPost.transform.position.x;
+                break;
             default:
-                leftWidth = leftPost.transform.position.x;
-                rightWidth = rightPost.transform.position.x;
-                break;
-            case Axis.Y:
-                leftWidth = leftPost.transform.position.y;
-                rightWidth = rightPost.transform.position.y;
-                break;
-
-            case Axis.Z:
-                leftWidth = leftPost.transform.position.z;
-                rightWidth = rightPost.transform.position.z;
+                leftPosition = leftPost.transform.position.z;
+                rightPosition = rightPost.transform.position.z;
                 break;
         }
 
-        if (leftWidth > rightWidth)
+        if (leftPosition > rightPosition)
             SwapPlace();
     }
 
     private void SwapPlace()
     {
-        leftWidth += rightWidth;
-        rightWidth = leftWidth - rightWidth;
-        leftWidth -= rightWidth;
+        leftPosition += rightPosition;
+        rightPosition = leftPosition - rightPosition;
+        leftPosition -= rightPosition;
     }
 
     private Vector3 GetMovementVector()
@@ -182,10 +177,7 @@ public class Agent : Unity.MLAgents.Agent
             case Axis.X:
                 movementVector.x = movementSpeed * Time.deltaTime;
                 break;
-            case Axis.Y:
-                movementVector.y = movementSpeed * Time.deltaTime;
-                break;
-            case Axis.Z:
+            default:
                 movementVector.z = movementSpeed * Time.deltaTime;
                 break;
         }

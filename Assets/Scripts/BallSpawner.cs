@@ -60,8 +60,8 @@ public class BallSpawner : MonoBehaviour
         Debug.Log(spawnVector);
         
         agent.SetPostPositions();
-        LeftMostSpawnArea = agent.leftWidth;
-        RightMostSpawnArea = agent.rightWidth;
+        LeftMostSpawnArea = agent.leftPosition;
+        RightMostSpawnArea = agent.rightPosition;
 
         random = Random.Range(LeftMostSpawnArea, RightMostSpawnArea);
         switch (agent.movingAxis)
