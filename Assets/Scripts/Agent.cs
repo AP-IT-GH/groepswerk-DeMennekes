@@ -13,7 +13,7 @@ using UnityEngine;
 [SuppressMessage("ReSharper", "BitwiseOperatorOnEnumWithoutFlags")]
 public class Agent : Unity.MLAgents.Agent
 {
-    public Axis moveAlong = Axis.X;
+    public Axis movingAxis = Axis.X;
     public GameObject leftPost;
     public GameObject rightPost;
     public float movementSpeed;
@@ -46,7 +46,7 @@ public class Agent : Unity.MLAgents.Agent
         RigidbodyConstraints freezePositionY = RigidbodyConstraints.FreezePositionY;
         RigidbodyConstraints defaultFreezes = freezeRotations | freezePositionY;
 
-        switch (moveAlong)
+        switch (movingAxis)
         {
             case Axis.Z:
                 rigidBodyConstraints = defaultFreezes | RigidbodyConstraints.FreezePositionX;
@@ -103,55 +103,49 @@ public class Agent : Unity.MLAgents.Agent
 
     private bool IsAgentAtLeftMax()
     {
-        bool isAgentAtNegativeMax = false;
-        float positionToUse = transform.position.x;
+        bool isAgentAtLeftMax = false;
+        float positionToUse;
 
-        switch (moveAlong)
+        switch (movingAxis)
         {
             case Axis.X:
                 positionToUse = transform.position.x;
                 break;
-            case Axis.Y:
-                positionToUse = transform.position.y;
-                break;
-            case Axis.Z:
+            default:
                 positionToUse = transform.position.z;
                 break;
         }
 
         SetPostPositions();
-        isAgentAtNegativeMax = (positionToUse < leftWidth);
+        isAgentAtLeftMax = (positionToUse < leftWidth);
 
-        return isAgentAtNegativeMax;
+        return isAgentAtLeftMax;
     }
 
     private bool IsAgentAtRightMax()
     {
-        bool isAgentAtPositiveMax = false;
-        float positionToUse = transform.position.x;
+        bool isAgentAtRightMax = false;
+        float positionToUse;
 
-        switch (moveAlong)
+        switch (movingAxis)
         {
             case Axis.X:
                 positionToUse = transform.position.x;
                 break;
-            case Axis.Y:
-                positionToUse = transform.position.y;
-                break;
-            case Axis.Z:
+            default:
                 positionToUse = transform.position.z;
                 break;
         }
 
         SetPostPositions();
-        isAgentAtPositiveMax = (positionToUse > rightWidth);
+        isAgentAtRightMax = (positionToUse > rightWidth);
 
-        return isAgentAtPositiveMax;
+        return isAgentAtRightMax;
     }
 
     public void SetPostPositions()
     {
-        switch (moveAlong)
+        switch (movingAxis)
         {
             default:
                 leftWidth = leftPost.transform.position.x;
@@ -183,7 +177,7 @@ public class Agent : Unity.MLAgents.Agent
     {
         Vector3 movementVector = defaultVector3;
 
-        switch (moveAlong)
+        switch (movingAxis)
         {
             case Axis.X:
                 movementVector.x = movementSpeed * Time.deltaTime;

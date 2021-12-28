@@ -40,7 +40,7 @@ public class BallSpawner : MonoBehaviour
 
     private void GiveForce(GameObject go)
     {
-        switch (agent.moveAlong)
+        switch (agent.movingAxis)
         {
             case Axis.Z:
                 go.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(force, 0f, 0f), ForceMode.VelocityChange);
@@ -64,7 +64,7 @@ public class BallSpawner : MonoBehaviour
         RightMostSpawnArea = agent.rightWidth;
 
         random = Random.Range(LeftMostSpawnArea, RightMostSpawnArea);
-        switch (agent.moveAlong)
+        switch (agent.movingAxis)
         {
             case Axis.Z:
                 spawnVector.z = random;
