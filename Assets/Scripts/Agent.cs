@@ -16,34 +16,27 @@ public class Agent : Unity.MLAgents.Agent
     public GameObject rightPost;
     public float movementSpeed;
     public TextMeshPro tmp;
-    
+
     private Rigidbody rb;
     private Vector3 agentStartPosition;
     private Vector3 agentPosition;
     private Vector3 defaultVector3 = new Vector3(0.0f, 0.0f, 0.0f);
     public float startWidth, endWidth;
-    
+
     public BallSpawner spawner;
 
     // Start is called before the first frame update
     void Start()
     {
         agentStartPosition = this.transform.position;
-
         SetAgentConstraints(); // Can agent rotate or move?
     }
-    
-    public override void OnEpisodeBegin()
-    {
-        this.transform.position = agentStartPosition;
-        spawner.SpawnBall();
-    }
-    
 
     private void SetAgentConstraints()
     {
         rb = GetComponent<Rigidbody>();
-        RigidbodyConstraints rigidBodyConstraints = rb.constraints;
+
+        RigidbodyConstraints rigidBodyConstraints;
         RigidbodyConstraints freezeRotations = RigidbodyConstraints.FreezeRotationY |
                                                RigidbodyConstraints.FreezeRotationX |
                                                RigidbodyConstraints.FreezeRotationZ;
@@ -53,16 +46,20 @@ public class Agent : Unity.MLAgents.Agent
         switch (moveAlong)
         {
             case Axis.Z:
-                rigidBodyConstraints = defaultFreezes |
-                                       RigidbodyConstraints.FreezePositionX;
+                rigidBodyConstraints = defaultFreezes | RigidbodyConstraints.FreezePositionX;
                 break;
             default:
-                rigidBodyConstraints = defaultFreezes |
-                                       RigidbodyConstraints.FreezePositionZ;
+                rigidBodyConstraints = defaultFreezes | RigidbodyConstraints.FreezePositionZ;
                 break;
         }
 
         rb.constraints = rigidBodyConstraints;
+    }
+
+    public override void OnEpisodeBegin()
+    {
+        this.transform.position = agentStartPosition;
+        spawner.SpawnBall();
     }
 
     // Update is called once per frame
@@ -76,7 +73,7 @@ public class Agent : Unity.MLAgents.Agent
         var actionsOutDiscrete = actionsOut.DiscreteActions;
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            actionsOutDiscrete[0] = 1; 
+            actionsOutDiscrete[0] = 1;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -91,18 +88,18 @@ public class Agent : Unity.MLAgents.Agent
         {
             transform.position -= GetMovementVector();
         }
-        
+
         if (actionsDiscrete[0] == 2 && !IsAgentAtNegativeMax())
         {
             transform.position += GetMovementVector();
         }
     }
-    
+
     private bool IsAgentAtNegativeMax()
     {
         bool isAgentAtNegativeMax = false;
         float positionToUse = transform.position.x;
-        
+
         switch (moveAlong)
         {
             case Axis.X:
@@ -115,18 +112,18 @@ public class Agent : Unity.MLAgents.Agent
                 positionToUse = transform.position.z;
                 break;
         }
-        
+
         SetPostPositions();
         isAgentAtNegativeMax = (positionToUse < startWidth);
-        
+
         return isAgentAtNegativeMax;
     }
-    
+
     private bool IsAgentAtPositiveMax()
     {
         bool isAgentAtPositiveMax = false;
         float positionToUse = transform.position.x;
-        
+
         switch (moveAlong)
         {
             case Axis.X:
@@ -139,10 +136,10 @@ public class Agent : Unity.MLAgents.Agent
                 positionToUse = transform.position.z;
                 break;
         }
-        
+
         SetPostPositions();
         isAgentAtPositiveMax = (positionToUse > endWidth);
-        
+
         return isAgentAtPositiveMax;
     }
 
@@ -158,7 +155,7 @@ public class Agent : Unity.MLAgents.Agent
                 startWidth = leftPost.transform.position.y;
                 endWidth = rightPost.transform.position.y;
                 break;
-            
+
             case Axis.Z:
                 startWidth = leftPost.transform.position.z;
                 endWidth = rightPost.transform.position.z;
@@ -168,18 +165,18 @@ public class Agent : Unity.MLAgents.Agent
         if (startWidth > endWidth)
             SwapPlace();
     }
-    
+
     private void SwapPlace()
     {
         startWidth += endWidth;
         endWidth = startWidth - endWidth;
         startWidth -= endWidth;
     }
-    
+
     private Vector3 GetMovementVector()
     {
         Vector3 movementVector = defaultVector3;
-        
+
         switch (moveAlong)
         {
             case Axis.X:
