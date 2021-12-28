@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using DefaultNamespace;
 using TMPro;
@@ -9,13 +10,14 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using UnityEngine;
 
+[SuppressMessage("ReSharper", "BitwiseOperatorOnEnumWithoutFlags")]
 public class Agent : Unity.MLAgents.Agent
 {
     public Axis moveAlong = Axis.X;
     public GameObject leftPost;
     public GameObject rightPost;
     public float movementSpeed;
-    public TextMeshPro tmp;
+    public TextMeshPro scoreboard;
 
     private Rigidbody rb;
     private Vector3 agentStartPosition;
@@ -37,6 +39,7 @@ public class Agent : Unity.MLAgents.Agent
         rb = GetComponent<Rigidbody>();
 
         RigidbodyConstraints rigidBodyConstraints;
+        
         RigidbodyConstraints freezeRotations = RigidbodyConstraints.FreezeRotationY |
                                                RigidbodyConstraints.FreezeRotationX |
                                                RigidbodyConstraints.FreezeRotationZ;
@@ -58,14 +61,14 @@ public class Agent : Unity.MLAgents.Agent
 
     public override void OnEpisodeBegin()
     {
-        this.transform.position = agentStartPosition;
+        this.transform.position = agentStartPosition; // Set agent on startposition
         spawner.SpawnBall();
     }
 
     // Update is called once per frame
     void Update()
     {
-        tmp.text = GetCumulativeReward().ToString(CultureInfo.CurrentCulture);
+        scoreboard.text = GetCumulativeReward().ToString(CultureInfo.CurrentCulture);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

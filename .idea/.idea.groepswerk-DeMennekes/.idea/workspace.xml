@@ -30,7 +30,7 @@
     <setting file="file://$PROJECT_DIR$/../jumper-assignment-Wovi10/Library/PackageCache/com.unity.ml-agents@2.0.0/Runtime/DecisionRequester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BallDespawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../jumper-assignment-Wovi10/Assets/Scripts/EnemySpawner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../jumper-assignment-Wovi10/Assets/Scripts/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -92,7 +92,8 @@
       <workItem from="1640072165792" duration="2480000" />
       <workItem from="1640181353115" duration="41000" />
       <workItem from="1640181425796" duration="4129000" />
-      <workItem from="1640700062467" duration="5762000" />
+      <workItem from="1640700062467" duration="5815000" />
+      <workItem from="1640706319523" duration="106000" />
     </task>
     <servers />
   </component>
