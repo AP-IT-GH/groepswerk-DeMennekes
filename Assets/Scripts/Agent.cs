@@ -14,16 +14,15 @@ using UnityEngine;
 public class Agent : Unity.MLAgents.Agent
 {
     public Axis movingAxis = Axis.X;
-    public GameObject leftPost;
-    public GameObject rightPost;
-    public float movementSpeed;
+    public GameObject leftPost, rightPost;
+    public float movementSpeed, leftPosition, rightPosition;
     public TextMeshPro scoreboard;
+    public float RewardOnCatch = 1f;
 
     private Rigidbody rb;
     private Vector3 agentStartPosition;
     private Vector3 agentPosition;
     private Vector3 defaultVector3 = new Vector3(0.0f, 0.0f, 0.0f);
-    public float leftPosition, rightPosition;
 
     public BallSpawner spawner;
 
@@ -171,14 +170,15 @@ public class Agent : Unity.MLAgents.Agent
     private Vector3 GetMovementVector()
     {
         Vector3 movementVector = defaultVector3;
-
+        float movementForce = movementSpeed * Time.deltaTime;
+        
         switch (movingAxis)
         {
             case Axis.X:
-                movementVector.x = movementSpeed * Time.deltaTime;
+                movementVector.x = movementForce;
                 break;
             default:
-                movementVector.z = movementSpeed * Time.deltaTime;
+                movementVector.z = movementForce;
                 break;
         }
 
@@ -187,13 +187,10 @@ public class Agent : Unity.MLAgents.Agent
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision");
         if (collision.gameObject.CompareTag("Ball"))
         {
-            Debug.Log("Ball caught");
             spawner.ClearEnemies();
-            // Destroy(collision.gameObject);
-            AddReward(1f);
+            AddReward(RewardOnCatch);
             EndEpisode();
         }
     }
