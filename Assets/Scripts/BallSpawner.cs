@@ -30,22 +30,17 @@ public class BallSpawner : MonoBehaviour
     
     public void SpawnBall()
     {
-        Debug.Log("------------");
-        
         Vector3 spawnPosition = GetLocalSpawnPosition();
-        Debug.Log($"local position: {spawnPosition}");
         GameObject go = Instantiate(ball, spawnPosition, transform.localRotation);
         //GameObject go = Instantiate(ball, transform);
         go.transform.SetParent(this.transform);
         go.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, -5f, 0f), ForceMode.VelocityChange);
-        
-        Debug.Log("------------");
     }
 
     private Vector3 GetLocalSpawnPosition()
     {
         var localPosition = transform.localPosition;
-        Debug.Log($"current local pos: {localPosition}");
+        
         spawnVector = new Vector3(localPosition.x, y: localPosition.y, localPosition.z);
         
         Debug.Log(spawnVector);
