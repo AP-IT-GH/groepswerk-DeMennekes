@@ -27,15 +27,18 @@ public class BallSpawner : MonoBehaviour
 
     private void GiveForce(GameObject go)
     {
+        Vector3 forceToAdd;
         switch (agent.movingAxis)
         {
             case Axis.Z:
-                go.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(force, 0f, 0f), ForceMode.VelocityChange);
+                forceToAdd = new Vector3(force, 0f, 0f);
                 break;
             default:
-                go.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, force), ForceMode.VelocityChange);
+                forceToAdd = new Vector3(0f, 0f, force);
                 break;
         }
+        
+        go.gameObject.GetComponent<Rigidbody>().AddForce(forceToAdd, ForceMode.VelocityChange);
     }
 
     private Vector3 GetLocalSpawnPosition()
@@ -43,8 +46,6 @@ public class BallSpawner : MonoBehaviour
         var localPosition = transform.localPosition;
         
         spawnVector = new Vector3(localPosition.x, y: localPosition.y, localPosition.z);
-        
-        Debug.Log(spawnVector);
         
         agent.SetPostPositions();
         leftMostSpawnArea = agent.leftPosition;
