@@ -43,9 +43,9 @@ public class BallSpawner : MonoBehaviour
 
     private Vector3 GetLocalSpawnPosition()
     {
-        var localPosition = transform.localPosition;
+        Vector3 localPosition = transform.localPosition;
         
-        spawnVector = new Vector3(localPosition.x, y: localPosition.y, localPosition.z);
+        spawnVector = localPosition;
         
         agent.SetPostPositions();
         leftMostSpawnArea = agent.leftPosition;
