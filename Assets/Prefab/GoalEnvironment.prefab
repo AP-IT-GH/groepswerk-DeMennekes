@@ -1008,13 +1008,14 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
-  moveAlong: 2
+  movingAxis: 1
   leftPost: {fileID: 3401308729955104556}
   rightPost: {fileID: 8144286641616690276}
   movementSpeed: 3
-  tmp: {fileID: 5627935322221279150}
-  startWidth: 0
-  endWidth: 0
+  leftPosition: 0
+  rightPosition: 0
+  scoreboard: {fileID: 0}
+  RewardOnCatch: 1
   spawner: {fileID: 5895371574340186057}
 --- !u!114 &5278989564945942688
 MonoBehaviour:
