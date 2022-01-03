@@ -36,14 +36,21 @@ Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit 
 <br>
 
 ## Spelverloop <a name="spelverloop"></a>
-
+Het spel zal als volgt gaan: 
+Er is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een Oculus Quest. Als gebruiker kan je jezelf verplaatsen doorheen het terrein. Het is de bedoeling dat je de voetbal vastneemt en vanaf het schuine platform laat rollen richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden. Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden. 
 <br>
 
 ## De spelomgeving <a name="spelomgeving"></a>
+Het terrein zelf bestaat uit een 3D stadion waar je doorheen kan lopen als gebruiker (Oculus Quest)
 ### Player <a name="player"></a>
-### AI Agent <a name="agent"></a>
-### Doel <a name="doel"></a>
 
+### AI Agent <a name="agent"></a>
+Gedurende het spel is de keeper de agent. Deze zal getraind worden op 3 verschillende niveau's:<br>
+Easy: De keeper is niet tot zijn optimale capaciteiten getraind en zal dus niet alle ballen kunnen pakken.<br>
+Average: De keeper is net iets beter getraind als het vorige niveau. <br>
+Advanced: Hier is het de bedoeling dat de keeper het beste is getraind en het moeilijker is om bij hem te kunnen scoren.<br>
+### Doel <a name="doel"></a>
+Het doel van het spel is om in de goal te kunnen scoren als speler. Dit gebeurt als de bal die gerolt werd over de achterlijn van de goal gaat.
 <br>
 
 ## Scripts <a name="allescripts"></a>
