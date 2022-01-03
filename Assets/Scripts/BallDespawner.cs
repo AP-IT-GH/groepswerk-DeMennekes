@@ -12,11 +12,13 @@ public class BallDespawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag(ENEMYTAG))
+        bool ballScored = collision.gameObject.CompareTag(ENEMYTAG);
+        
+        if (ballScored)
         {
             Destroy(collision.gameObject);
-            agent.AddReward(RewardOnGoal);
-            agent.EndEpisode();
+            agent.RewardAgent(RewardOnGoal);
+            agent.EndEpisodeActions();
         }
     }
 }

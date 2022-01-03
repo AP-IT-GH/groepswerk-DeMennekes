@@ -7,8 +7,9 @@
     <list default="true" id="c7d0e599-9944-4603-8e2e-b43cc1887de0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ML-Agents/Timers/VRSetUp_timers.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ML-Agents/Timers/VRSetUp_timers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/GoalEnvironment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/GoalEnvironment.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VRSetUp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VRSetUp.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Agent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Agent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BallDespawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BallDespawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +100,7 @@
       <workItem from="1640700062467" duration="5815000" />
       <workItem from="1640706319523" duration="1907000" />
       <workItem from="1641222874146" duration="1120000" />
+      <workItem from="1641230942178" duration="1844000" />
     </task>
     <servers />
   </component>

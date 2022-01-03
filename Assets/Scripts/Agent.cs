@@ -61,6 +61,8 @@ public class Agent : Unity.MLAgents.Agent
 
     public override void OnEpisodeBegin()
     {
+        Debug.Log("---------------");
+        Debug.Log("Episode started");
         this.transform.position = agentStartPosition; // Set agent on startposition
         spawner.SpawnBall();
     }
@@ -188,11 +190,26 @@ public class Agent : Unity.MLAgents.Agent
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag(ENEMYTAG))
+        bool keeperCatchesBall = collision.gameObject.CompareTag(ENEMYTAG);
+        
+        if (keeperCatchesBall)
         {
-            spawner.ClearEnemies();
-            AddReward(RewardOnCatch);
-            EndEpisode();
+            RewardAgent(RewardOnCatch);
+            EndEpisodeActions();
         }
+    }
+
+    public void EndEpisodeActions()
+    {
+        spawner.ClearEnemies();
+        EndEpisode();
+        Debug.Log("Episode ended");
+        Debug.Log("-------------");
+    }
+
+    public void RewardAgent(float reward)
+    {
+        Debug.Log("Rewarding " + reward + " to agent.");
+        AddReward(reward);
     }
 }

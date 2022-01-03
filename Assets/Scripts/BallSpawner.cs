@@ -15,14 +15,20 @@ public class BallSpawner : MonoBehaviour
     private float random;
     private Rigidbody rb;
     private float force = 15f;
+    private bool isActive = false;
     
     public void SpawnBall()
     {
         Vector3 spawnPosition = GetLocalSpawnPosition();
+        DebugInfo("Reached spawnball");
         DebugInfo(spawnPosition);
-        GameObject go = Instantiate(ball, spawnPosition, transform.localRotation);
-        
-        go.transform.SetParent(this.transform);
+        if (!isActive)
+        {
+            GameObject go = Instantiate(ball, spawnPosition, transform.localRotation);
+            go.transform.SetParent(this.transform);
+
+            isActive = true;
+        }
         //GiveForce(go);
     }
 
@@ -72,6 +78,7 @@ public class BallSpawner : MonoBehaviour
             GameObject.Destroy(ball.gameObject);
         }
 
+        isActive = false;
     }
     private void OnEnable()
     {
