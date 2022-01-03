@@ -19,10 +19,11 @@ public class BallSpawner : MonoBehaviour
     public void SpawnBall()
     {
         Vector3 spawnPosition = GetLocalSpawnPosition();
+        DebugInfo(spawnPosition);
         GameObject go = Instantiate(ball, spawnPosition, transform.localRotation);
         
         go.transform.SetParent(this.transform);
-        //GiveForce(go);
+        GiveForce(go);
     }
 
     public void GiveForce(GameObject go)
@@ -43,7 +44,7 @@ public class BallSpawner : MonoBehaviour
 
     private Vector3 GetLocalSpawnPosition()
     {
-        Vector3 localPosition = transform.localPosition;
+        Vector3 localPosition = transform.position;
         
         spawnVector = localPosition;
         
@@ -75,5 +76,10 @@ public class BallSpawner : MonoBehaviour
     private void OnEnable()
     {
         //Balls = transform.Find("Balls").gameObject;
+    }
+
+    private void DebugInfo(object toLog)
+    {
+        Debug.Log(toLog.ToString());
     }
 }

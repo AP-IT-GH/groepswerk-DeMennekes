@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7d0e599-9944-4603-8e2e-b43cc1887de0" name="Changes" comment="" />
+    <list default="true" id="c7d0e599-9944-4603-8e2e-b43cc1887de0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.groepswerk-DeMennekes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ML-Agents/Timers/VRSetUp_timers.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ML-Agents/Timers/VRSetUp_timers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/GoalEnvironment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/GoalEnvironment.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VRSetUp.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VRSetUp.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +30,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../jumper-assignment-Wovi10/Assets/Scripts/VelociAgent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/da6ab58261ca4bf88d2245fa0b5e29ff18000/62/a9c21c63/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/82c503977c5347cf82f44677f633fcf613be00/2e/81a32e76/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../jumper-assignment-Wovi10/Library/PackageCache/com.unity.ml-agents@2.0.0/Runtime/DecisionRequester.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BallDespawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Agent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -91,6 +98,7 @@
       <workItem from="1640181425796" duration="4129000" />
       <workItem from="1640700062467" duration="5815000" />
       <workItem from="1640706319523" duration="1907000" />
+      <workItem from="1641222874146" duration="1120000" />
     </task>
     <servers />
   </component>
