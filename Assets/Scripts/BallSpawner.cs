@@ -22,10 +22,10 @@ public class BallSpawner : MonoBehaviour
         GameObject go = Instantiate(ball, spawnPosition, transform.localRotation);
         
         go.transform.SetParent(this.transform);
-        GiveForce(go);
+        //GiveForce(go);
     }
 
-    private void GiveForce(GameObject go)
+    public void GiveForce(GameObject go)
     {
         Vector3 forceToAdd;
         switch (agent.movingAxis)
