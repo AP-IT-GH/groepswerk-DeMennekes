@@ -32,18 +32,19 @@ Om het project tot een goed einde te brengen zullen er een aantal zaken klaargez
 ### Software
 Om het project te kunnen bouwen zullen we gebruik maken van Unity als development platform. Om machine learning te integreren maken we gebruik van het ML-Agents package. Zorg er voor dat deze beide zeker geïnstalleerd zijn voordat je verder gaat met de volgende stappen. 
 ### Voorinstallatie
-Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de asset store genaamd …. . Je kan deze in de asset store installeren en vervolgens toevoegen in jouw Unity project. 
+Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd Super Goalie(Basic). Je kan deze in de asset store installeren en vervolgens toevoegen in jouw Unity project. 
+![image](https://user-images.githubusercontent.com/61239203/148069333-57d63ac7-d560-4125-b267-cf81903ca911.png)
 <br>
 
 ## Spelverloop <a name="spelverloop"></a>
 Het spel zal als volgt gaan: 
-Er is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een Oculus Quest. Als gebruiker kan je jezelf verplaatsen doorheen het terrein. Het is de bedoeling dat je de voetbal vastneemt en vanaf het schuine platform laat rollen richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden. Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden. 
+Er is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een Oculus Quest. Als gebruiker kan je jezelf verplaatsen doorheen het terrein. Het is de bedoeling dat je de voetbal vastneemt vervolgens rolt richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden. (Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden.)
 <br>
 
 ## De spelomgeving <a name="spelomgeving"></a>
-Het terrein zelf bestaat uit een 3D stadion waar je doorheen kan lopen als gebruiker (Oculus Quest)
+Het terrein zelf bestaat uit een 3D stadion waar je doorheen kan lopen als gebruiker (Oculus Quest).
 ### Player <a name="player"></a>
-
+De gebruiker zelf kan doorheen de spelomgeving lopen. Het doel is om de bal vast te nemen en proberen te scoren bij de getrainde keeper.
 ### AI Agent <a name="agent"></a>
 Gedurende het spel is de keeper de agent. Deze zal getraind worden op 3 verschillende niveau's:<br>
 Easy: De keeper is niet tot zijn optimale capaciteiten getraind en zal dus niet alle ballen kunnen pakken.<br>
