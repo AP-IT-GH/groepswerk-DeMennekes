@@ -33,7 +33,8 @@ Om het project tot een goed einde te brengen zullen er een aantal zaken klaargez
 Om het project te kunnen bouwen zullen we gebruik maken van Unity als development platform. Om machine learning te integreren maken we gebruik van het ML-Agents package. Zorg er voor dat deze beide zeker geïnstalleerd zijn voordat je verder gaat met de volgende stappen. 
 ### Voorinstallatie
 Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd Super Goalie(Basic). Je kan deze in de asset store installeren en vervolgens toevoegen in jouw Unity project. 
-![image](https://user-images.githubusercontent.com/61239203/148069333-57d63ac7-d560-4125-b267-cf81903ca911.png)
+<br>
+![image](https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png)
 <br>
 
 ## Spelverloop <a name="spelverloop"></a>
