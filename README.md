@@ -5,11 +5,11 @@
 2. [Methoden](#methoden)
     - [Installatie](#installatie)
     - [Spelverloop](#spelverloop)
-    - [Observaties, mogelijke acties en beloningen](#Observaties,-mogelijke-acties-en-beloningen)
-    - [Objecten + gedragingen](#objecten+gedragingen)
+    - [Observaties, mogelijke acties en beloningen](#Observaties-mogelijke-acties-en-beloningen)
+    - [Objecten + gedragingen](#objecten--gedragingen)
     - [One-pager](#one-pager)
 3. [Resultaten](#resultaten)
-    - [Resultaten van de training](#resultaten-van-de-training)
+    - [Tensorboard](#tensorboard)
     - [Waarnemingen](#waarnemingen)
 4. [Conclusie](#conclusie)
 
@@ -80,7 +80,7 @@ Het doel van het spel is om in de goal te kunnen scoren als speler. Dit gebeurt 
 > Alle informatie van de one-pager
 > Indien van toepassing: waar jullie afwijken van de one-pager en waarom
 
-## Resultaten van de training
+## Resultaten
 
 > Resultaten van de training met Tensorboard afbeeldingen
 
