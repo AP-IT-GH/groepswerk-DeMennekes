@@ -19,7 +19,9 @@ Het concept van onze leefwereld is een spel waarbij het de bedoeling is om een d
 
 ### Samenvatting
 
-Via deze tutorial zullen wij u stapsgewijs gidsen doorheen ons eindproject van VR Experience in combinatie met Machine Learning. Tijdens het project maakten we gebruik van Unity, Anaconda en de ML-Agents package om een doelman (Agent) te laten bewegen om zo de aankomende ballen tegen te houden. Om de bal te rollen richting doel is het aangeraden gebruik te maken van een Oculus Quest. Clone dit project en volg onze stappen om tot een gewenst resultaat te komen. Heel veel plezier met het uitvoeren van deze opdracht!
+Via deze tutorial zullen wij u stapsgewijs gidsen doorheen ons eindproject van VR Experience in combinatie met Machine Learning. Tijdens het project maakten we gebruik van Unity, Anaconda en de ML-Agents package om een doelman (Agent) te laten bewegen om zo de aankomende ballen tegen te houden. Om de bal te rollen richting doel is het aangeraden gebruik te maken van een Oculus Quest. 
+
+Clone dit project en volg onze stappen om tot een gewenst resultaat te komen. Heel veel plezier met het uitvoeren van deze opdracht!
 
 ## Methoden
 
@@ -29,12 +31,12 @@ Om het project tot een goed einde te brengen en te kunnen reproduceren zullen er
 
 #### Software
 
+Zorg er voor dat deze beide zeker geïnstalleerd zijn voordat je verder gaat met de volgende stappen.
+
 Software    | Versie
 ----------- | ---------
 Unity       | 2020.3.21f1
 ML-Agents   | 2.0.0
-
-Zorg er voor dat deze beide zeker geïnstalleerd zijn voordat je verder gaat met de volgende stappen.
 
 #### Voorinstallatie
 
@@ -44,7 +46,11 @@ Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit 
 
 ### Spelverloop
 
-In het spel is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een *Oculus Quest*. Als gebruiker kan je jezelf verplaatsen doorheen het terrein. Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden. (Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden.)
+In het spel is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een *Oculus Quest*. Als gebruiker kan je jezelf verplaatsen doorheen het terrein. 
+
+Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden. 
+
+(Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden.)
 
 ### Observaties, mogelijke acties en beloningen
 
