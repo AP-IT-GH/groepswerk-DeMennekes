@@ -5,8 +5,12 @@
 2. [Methoden](#methoden)
     - [Installatie](#installatie)
     - [Spelverloop](#spelverloop)
-    - [OAB](#oab)
+    - [Observaties, mogelijke acties en beloningen](#Observaties,-mogelijke-acties-en-beloningen)
+    - [Objecten + gedragingen](#objecten+gedragingen)
+    - [One-pager](#one-pager)
 3. [Resultaten](#resultaten)
+    - [Resultaten van de training](#resultaten-van-de-training)
+    - [Waarnemingen](#waarnemingen)
 4. [Conclusie](#conclusie)
 
 ## Inleiding
