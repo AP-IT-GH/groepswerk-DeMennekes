@@ -20,16 +20,16 @@ public class BallSpawner : MonoBehaviour
     public void SpawnBall()
     {
         Vector3 spawnPosition = GetLocalSpawnPosition();
-        DebugInfo("Reached spawnball");
-        DebugInfo(spawnPosition);
+        // DebugInfo("Reached spawnball");
+        // DebugInfo(spawnPosition);
         if (!isActive)
         {
             GameObject go = Instantiate(ball, spawnPosition, transform.localRotation);
             go.transform.SetParent(this.transform);
 
-            isActive = true;
+            isActive = false;
+            GiveForce(go);
         }
-        //GiveForce(go);
     }
 
     public void GiveForce(GameObject go)

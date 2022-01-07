@@ -61,10 +61,15 @@ public class Agent : Unity.MLAgents.Agent
 
     public override void OnEpisodeBegin()
     {
-        Debug.Log("---------------");
-        Debug.Log("Episode started");
-        this.transform.position = agentStartPosition; // Set agent on startposition
+        ResetAgent();
         spawner.SpawnBall();
+    }
+
+    private void ResetAgent()
+    {
+        this.transform.position = agentStartPosition;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -184,7 +189,7 @@ public class Agent : Unity.MLAgents.Agent
                 movementVector.z = movementForce;
                 break;
         }
-
+        
         return movementVector;
     }
 
@@ -203,13 +208,11 @@ public class Agent : Unity.MLAgents.Agent
     {
         spawner.ClearEnemies();
         EndEpisode();
-        Debug.Log("Episode ended");
-        Debug.Log("-------------");
     }
 
     public void RewardAgent(float reward)
     {
-        Debug.Log("Rewarding " + reward + " to agent.");
+        // Debug.Log("Rewarding " + reward + " to agent.");
         AddReward(reward);
     }
 }
