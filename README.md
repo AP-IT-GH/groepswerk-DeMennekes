@@ -1,74 +1,107 @@
-# VR Experience: Penality Bowling
+# Penality Bowling
 
-
-# Inhoudstafel
-1. [Introductie](#introductie)
-2. [Nodige software en voorinstallatie](#benodigdheden)
-3. [Spelverloop](#spelverloop)
-4. [De spelomgeving](#spelomgeving)
-    - [Player](#player)
-    - [AI Agent](#agent)
-    - [Doel](#doel)
-5. [Scripts (C#)](#allescripts)
-    - [Agent.cs](#agentscript)
-    - [Axis.cs](#axisscript)
-    - [BallDespawner.cs](#despawnerscript)
-    - [BallSpawner.cs](#spawnerscript)
-6. [Training](#training)
-    - [Anaconda](#anaconda)
-    - [Configuratie](#configuratie)
+1. [Inleiding](#inleiding)
+    - [Samenvatting](#samenvatting)
+2. [Methoden](#methoden)
+    - [Installatie](#installatie)
+    - [Spelverloop](#spelverloop)
+    - [Observaties, mogelijke acties en beloningen](#Observaties-mogelijke-acties-en-beloningen)
+    - [Objecten + gedragingen](#objecten--gedragingen)
+    - [One-pager](#one-pager)
+3. [Resultaten](#resultaten)
     - [Tensorboard](#tensorboard)
-    - [Resultaten](#resultaten)
-7. [Conclusie](#conclusie)
+    - [Waarnemingen](#waarnemingen)
+4. [Conclusie](#conclusie)
 
-<br>
+## Inleiding
 
-## Introductie <a name="introductie"></a>
-Via deze tutorial zullen wij u stapsgewijs gidsen doorheen ons eindproject van VR Experience in combinatie met Machine Learning . Tijdens het project maakten we gebruik van Unity, Anaconda en de ML-Agents package om een doelman (Agent) te laten bewegen om zo de aankomende ballen tegen te houden. Het concept van onze leefwereld is een spel waarbij het de bedoeling is om een doelpunt te scoren bij ons uitstekend getrainde doelman. Om de bal te rollen richting doel is het aangeraden gebruik te maken van een Oculus Quest.  Clone dit project en volg onze stappen om tot een gewenst resultaat te komen. Heel veel plezier met het uitvoeren van deze opdracht!
-<br>
+Het concept van onze leefwereld is een spel waarbij het de bedoeling is om een doelpunt te scoren bij ons uitstekend getrainde doelman.
 
-## Nodige software en voorinstallatie <a name="benodigdheden"></a>
-Om het project tot een goed einde te brengen zullen er een aantal zaken klaargezet/geïnstalleerd moeten worden. 
-### Software
-Om het project te kunnen bouwen zullen we gebruik maken van Unity als development platform. Om machine learning te integreren maken we gebruik van het ML-Agents package. Zorg er voor dat deze beide zeker geïnstalleerd zijn voordat je verder gaat met de volgende stappen. 
-### Voorinstallatie
-Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd Super Goalie(Basic). Je kan deze in de asset store installeren en vervolgens toevoegen in jouw Unity project. 
-<br>
+### Samenvatting
+
+Via deze tutorial zullen wij u stapsgewijs gidsen doorheen ons eindproject van VR Experience in combinatie met Machine Learning. Tijdens het project maakten we gebruik van Unity, Anaconda en de ML-Agents package om een doelman (Agent) te laten bewegen om zo de aankomende ballen tegen te houden. Om de bal te rollen richting doel is het aangeraden gebruik te maken van een Oculus Quest. 
+
+Clone dit project en volg onze stappen om tot een gewenst resultaat te komen. Heel veel plezier met het uitvoeren van deze opdracht!
+
+## Methoden
+
+Om het project tot een goed einde te brengen en te kunnen reproduceren zullen er een aantal zaken klaargezet/geïnstalleerd moeten worden.
+
+### Installatie
+
+#### Software
+
+Zorg er voor dat deze beide zeker geïnstalleerd zijn voordat je verder gaat met de volgende stappen.
+
+Software    | Versie
+----------- | ---------
+Unity       | 2020.3.21f1
+ML-Agents   | 2.0.0
+
+#### Voorinstallatie
+
+Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd *Super Goalie(Basic)*. Je kan deze in de asset store installeren en vervolgens toevoegen in jouw Unity project.
+
 ![image](https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png)
-<br>
 
-## Spelverloop <a name="spelverloop"></a>
-Het spel zal als volgt gaan: 
-Er is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een Oculus Quest. Als gebruiker kan je jezelf verplaatsen doorheen het terrein. Het is de bedoeling dat je de voetbal vastneemt vervolgens rolt richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden. (Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden.)
-<br>
+### Spelverloop
 
-## De spelomgeving <a name="spelomgeving"></a>
+In het spel is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een *Oculus Quest*. Als gebruiker kan je jezelf verplaatsen doorheen het terrein. 
+
+Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden. 
+
+(Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden.)
+
+### Observaties, mogelijke acties en beloningen
+
+Observaties | Beloning/bestraffing
+--- | ---
+Bal komt af op agent    | 0
+Bal collide met agent (random plaats)   | +0.2f
+Bal collide met binnenste van "vangnet" | +1.0f + einde episode
+Bal is in goal  | -1.0f + einde episode
+
+### Objecten + gedragingen
+
 Het terrein zelf bestaat uit een 3D stadion waar je doorheen kan lopen als gebruiker (Oculus Quest).
-### Player <a name="player"></a>
+
+#### Player
+
 De gebruiker zelf kan doorheen de spelomgeving lopen. Het doel is om de bal vast te nemen en proberen te scoren bij de getrainde keeper.
-### AI Agent <a name="agent"></a>
-Gedurende het spel is de keeper de agent. Deze zal getraind worden op 3 verschillende niveau's:<br>
-Easy: De keeper is niet tot zijn optimale capaciteiten getraind en zal dus niet alle ballen kunnen pakken.<br>
-Average: De keeper is net iets beter getraind als het vorige niveau. <br>
-Advanced: Hier is het de bedoeling dat de keeper het beste is getraind en het moeilijker is om bij hem te kunnen scoren.<br>
-### Doel <a name="doel"></a>
-Het doel van het spel is om in de goal te kunnen scoren als speler. Dit gebeurt als de bal die gerolt werd over de achterlijn van de goal gaat.
-<br>
 
-## Scripts <a name="allescripts"></a>
-### Agent.cs <a name="agentscript"></a>
-### Axis.c <a name="axisscript"></a>
-### BallDespawner.cs <a name="despawnerscript"></a>
-### BallSpawner.cs <a name="spawnerscript"></a>
+#### AI Agent
 
-<br>
+Gedurende het spel is de keeper de agent. Deze zal getraind worden op 3 verschillende niveau's:
 
-## Training <a name="training"></a>
-### Anaconda <a name="anaconda"></a>
-### Configuratie <a name="configuratie"></a>
-### Tensorboard <a name="tensorboard"></a>
-### Resultaten <a name="resultaten"></a>
+- Easy: de keeper is niet tot zijn optimale capaciteiten getraind en zal dus niet alle ballen kunnen pakken.
+- Average: de keeper is net iets beter getraind als het vorige niveau.
+- Advanced: hier is het de bedoeling dat de keeper het beste is getraind en het moeilijker is om bij hem te kunnen scoren.
 
-<br>
+#### Doel
 
-## Conclusie <a name="conclusie"></a>
+Het doel van het spel is om in de goal te kunnen scoren als speler. Dit gebeurt als de bal die gerold werd over de achterlijn van de goal gaat.
+
+### One-pager
+
+> Alle informatie van de one-pager
+> Indien van toepassing: waar jullie afwijken van de one-pager en waarom
+
+## Resultaten
+
+> Resultaten van de training met Tensorboard afbeeldingen
+
+### Tensorboard
+
+> Tensorboard afbeeldingen
+> Beschrijving van de Tensorboard grafieken
+
+### Waarnemingen
+
+> Opvallende waarnemingen tijdens het trainen
+
+## Conclusie
+
+> Eén zin die nog eens samenvat wat jullie hebben gedaan
+> Kort overzicht resultaten (2 á 3 zinnen zonder cijfers te vernoemen)
+> Een 'persoonlijke' visie op de resultaten, wat betekenen de resultaten nu eigenlijk
+> Verbeteringen naar de toekomst toe
