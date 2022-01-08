@@ -109,7 +109,7 @@ De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in d
 
 ## Resultaten
 
-Zoals hierboven uitgelegd wordt de agent getrained. Die trainingen leveren uiteindelijk een resultaat op.
+Zoals hierboven uitgelegd wordt de agent getraind. Die trainingen leverden uiteindelijk een resultaat op.
 
 Dan rest ons nog de vraag: wat kunnen we afleiden en uiteindelijk concluderen uit de resultaten?
 
