@@ -5,13 +5,12 @@
 2. [Methoden](#methoden)
     - [Installatie](#installatie)
     - [Spelverloop](#spelverloop)
-    - [Observaties, mogelijke acties en beloningen](#Observaties-mogelijke-acties-en-beloningen)
+    - [Observaties, mogelijke acties en beloningen](#observaties-mogelijke-acties-en-beloningen)
     - [Spelobjecten](#spelobjecten)
     - [Gedragingen](#gedragingen)
     - [One-pager](#one-pager)
 3. [Resultaten](#resultaten)
     - [Tensorboard](#tensorboard)
-    - [Waarnemingen](#waarnemingen)
 4. [Conclusie](#conclusie)
 
 ## Inleiding
@@ -47,7 +46,7 @@ Anaconda        |
 
 Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd *Super Goalie(Basic)*. Je kan deze in de asset store installeren en vervolgens toevoegen in jouw Unity project.
 
-![image](https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png)
+![image1](https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png)
 
 ### Spelverloop
 
@@ -120,26 +119,40 @@ Korte beschrijving van het script.
 
 ## Resultaten
 
-Zoals hierboven uitgelegd wordt de agent getraind. Die trainingen leverden uiteindelijk een resultaat op.
+Zoals hierboven uitgelegd wordt de agent getraind op 3 verschillende niveau's. Die trainingen leverden uiteindelijk een resultaat op.
 
 Dan rest ons nog de vraag: wat kunnen we afleiden en uiteindelijk concluderen uit de resultaten?
 
 ### Tensorboard
 
-Het resultaat van de trainingsfase kun je bekijken op Tensorboard. Op de volgende afbeeldingen zie je de Tensorboard grafieken en hun beschrijving.
+Het resultaat van de trainingsfase kun je observeren op Tensorboard. Op de volgende afbeeldingen zie je de Tensorboard grafieken en hun beschrijving.
 
-> Tensorboard afbeeldingen
-> Beschrijving van de Tensorboard grafieken
+#### Training01
 
-### Waarnemingen
+Hier is de grafiek van de eerste training te zien. Zoals verwacht is het resultaat van de eerste training ondermaads.
 
-> Opvallende waarnemingen tijdens het trainen
+![image2](https://user-images.githubusercontent.com/35467395/148653157-9275bce5-2ecf-44d2-8666-41bd0585d281.png)
+
+#### Training02 - Training05
+
+Trainingen 02 tot 05 bespreken we samen. Deze trainingen hebben we elke keer vroeger moeten stoppen omdat we merkten dat ze niet zo goed werkte. Om dat probleem op te lossen hebben we de hoogte van de rays en mass van de keeper aangepast. Het resultaat is op volgende afbeelding te zien.
+
+![image3](https://user-images.githubusercontent.com/35467395/148653454-367673c4-c488-43db-9d76-2506598331b2.png)
+
+#### Training06
+
+Uiteindelijk hebben we voor Training06 een stuk code toegevoegd om de force dat op de keeper staat er af te halen. Dat hebben we gedaan omdat de keeper momentum kreeg van de bal en daardoor ver weg vloog (lol). Het resultaat van Training06 kun je hier zien:
+
+![image4](https://user-images.githubusercontent.com/35467395/148653619-67518b06-84e3-4e79-a2ca-fab00f5b27c0.png)
 
 ## Conclusie
 
 Tijdens dit project hebben we met behulp van Unity en Machine Learning een spel gecreëerd waarin een gebruiker met een *Oculus Quest* doelpunten kan proberen scoren in de goal van een getrainde ML Agent.
 
-> Eén zin die nog eens samenvat wat jullie hebben gedaan
-> Kort overzicht resultaten (2 á 3 zinnen zonder cijfers te vernoemen)
-> Een 'persoonlijke' visie op de resultaten, wat betekenen de resultaten nu eigenlijk
-> Verbeteringen naar de toekomst toe
+Hier zie je een overzicht van de resultaten van alle zes trainingen. Het is duidelijk te zien dat de resultaten sterk uiteen lopen.
+
+![image5](https://user-images.githubusercontent.com/35467395/148652731-0238f65a-38d0-4409-a5c2-11aa68f51c96.png)
+
+Ongeacht de "problemen" vinden we dat de we uiteindelijk met een mooi resultaat zijn geëindigd met een Agent die we eigenlijk bijna perfect kunnen noemen.
+
+> Verbeteringen naar de toekomst toe?
