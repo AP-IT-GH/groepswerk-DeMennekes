@@ -6,7 +6,8 @@
     - [Installatie](#installatie)
     - [Spelverloop](#spelverloop)
     - [Observaties, mogelijke acties en beloningen](#Observaties-mogelijke-acties-en-beloningen)
-    - [Objecten + gedragingen](#objecten--gedragingen)
+    - [Spelobjecten](#spelobjecten)
+    - [Gedragingen](#gedragingen)
     - [One-pager](#one-pager)
 3. [Resultaten](#resultaten)
     - [Tensorboard](#tensorboard)
@@ -34,9 +35,13 @@ Om het project tot een goed einde te brengen en te kunnen reproduceren zullen er
 Zorg er voor dat deze beide zeker geïnstalleerd zijn voordat je verder gaat met de volgende stappen.
 
 Software    | Versie
------------ | ---------
-Unity       | 2020.3.21f1
+--- | ---
+Unity   | 2020.3.24f1
 ML-Agents   | 2.0.0
+Visual Studio   |
+Python 3    | 3
+Anaconda    |
+
 
 #### Voorinstallatie
 
@@ -46,9 +51,9 @@ Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit 
 
 ### Spelverloop
 
-In het spel is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een *Oculus Quest*. Als gebruiker kan je jezelf verplaatsen doorheen het terrein. 
+In het spel is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een *Oculus Quest*. Als gebruiker kan je jezelf verplaatsen doorheen het terrein.
 
-Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden. 
+Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden.
 
 (Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden.)
 
@@ -61,9 +66,12 @@ Bal collide met agent (random plaats)   | +0.2f
 Bal collide met binnenste van "vangnet" | +1.0f + einde episode
 Bal is in goal  | -1.0f + einde episode
 
-### Objecten + gedragingen
+### Spelobjecten
 
-Het terrein zelf bestaat uit een 3D stadion waar je doorheen kan lopen als gebruiker (Oculus Quest).
+Onderstaande afbeelding toont de volledige hiërarchie binnen de spelobjecten met hun benaming zoals ze in deze handleiding gebruikt zullen worden.
+> insert afbeelding
+
+Het terrein zelf bestaat uit een 3D stadion waar je doorheen kan lopen als gebruiker met een VR-bril (Oculus Quest).
 
 #### Player
 
@@ -80,6 +88,17 @@ Gedurende het spel is de keeper de agent. Deze zal getraind worden op 3 verschil
 #### Doel
 
 Het doel van het spel is om in de goal te kunnen scoren als speler. Dit gebeurt als de bal die gerold werd over de achterlijn van de goal gaat.
+
+### Gedragingen
+
+De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in de volgende scripts:
+
+- Agent.cs
+- Axis.cs
+- BallDespawner.cs
+- BallSpawner.cs
+
+> Nog gedetailleerder maken: "script A wordt gebruikt door object B...
 
 ### One-pager
 
