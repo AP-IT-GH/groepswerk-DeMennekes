@@ -34,13 +34,13 @@ Om het project tot een goed einde te brengen en te kunnen reproduceren zullen er
 
 Zorg er voor dat deze beide zeker geïnstalleerd zijn voordat je verder gaat met de volgende stappen.
 
-Software    | Versie
---- | ---
-Unity   | 2020.3.24f1
-ML-Agents   | 2.0.0
+Software        | Versie
+--------------- | -------
+Unity           | 2020.3.24f1
+ML-Agents       | 2.0.0
 Visual Studio   |
-Python 3    | 3
-Anaconda    |
+Python 3        | 3
+Anaconda        |
 
 
 #### Voorinstallatie
@@ -59,12 +59,12 @@ Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt richting het 
 
 ### Observaties, mogelijke acties en beloningen
 
-Observaties | Beloning/bestraffing
---- | ---
-Bal komt af op agent    | 0
+Observaties                             | Beloning/bestraffing
+--------------------------------------- | ---------------------
+Bal komt af op agent                    | 0
 Bal collide met agent (random plaats)   | +0.2f
 Bal collide met binnenste van "vangnet" | +1.0f + einde episode
-Bal is in goal  | -1.0f + einde episode
+Bal is in goal                          | -1.0f + einde episode
 
 ### Spelobjecten
 
@@ -81,10 +81,10 @@ De gebruiker zelf kan doorheen de spelomgeving lopen. Het doel is om de bal vast
 
 Gedurende het spel is de keeper de agent. Deze zal getraind worden op 3 verschillende niveau's:
 
-Niveau | Beschrijving
---- | ---
-Easy    | De keeper is niet tot zijn optimale capaciteiten getraind en zal dus niet alle ballen kunnen pakken.
-Average | De keeper is net iets beter getraind als het vorige niveau.
+Niveau      | Beschrijving
+----------- | ------------
+Easy        | De keeper is niet tot zijn optimale capaciteiten getraind en zal dus niet alle ballen kunnen pakken.
+Average     | De keeper is net iets beter getraind als het vorige niveau.
 Advanced    | Hier is het de bedoeling dat de keeper het beste is getraind en het moeilijker is om bij hem te kunnen scoren.
 
 #### Doel
