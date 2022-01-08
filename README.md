@@ -77,7 +77,7 @@ Het terrein zelf bestaat uit een 3D stadion waar je doorheen kan lopen als gebru
 
 De gebruiker zelf kan doorheen de spelomgeving lopen. Het doel is om de bal vast te nemen en proberen te scoren bij de getrainde keeper.
 
-#### AI Agent
+#### Keeper (AI Agent)
 
 Gedurende het spel is de keeper de agent. Deze zal getraind worden op 3 verschillende niveau's:
 
@@ -87,20 +87,31 @@ Easy        | De keeper is niet tot zijn optimale capaciteiten getraind en zal d
 Average     | De keeper is net iets beter getraind als het vorige niveau.
 Advanced    | Hier is het de bedoeling dat de keeper het beste is getraind en het moeilijker is om bij hem te kunnen scoren.
 
-#### Doel
+#### Goal
 
 Het doel van het spel is om in de goal te kunnen scoren als speler. Dit gebeurt als de bal die gerold werd over de achterlijn van de goal gaat.
 
 ### Gedragingen
 
-De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in de volgende scripts:
+De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in scripts. Hier beschrijven we welke scripts bij welke objecten horen en wat de gedragingen van de objecten dus precies zijn.
 
-- Agent.cs
-- Axis.cs
-- BallDespawner.cs
-- BallSpawner.cs
+#### Agent.cs
 
-> Nog gedetailleerder maken: "script A wordt gebruikt door object B..."
+Korte beschrijving van het script.
+
+#### Axis.cs
+
+Korte beschrijving van het script.
+
+#### BallDespawner.cs
+
+Korte beschrijving van het script.
+
+#### BallSpawner.cs
+
+Korte beschrijving van het script.
+
+> Nog gedetailleerder maken: "script A zorgt ervoor dat ... wordt gebruikt door object B ..."
 
 ### One-pager
 
