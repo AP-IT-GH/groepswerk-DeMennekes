@@ -37,9 +37,6 @@ Software        | Versie
 --------------- | -------
 Unity           | 2020.3.24f1
 ML-Agents       | 2.0.0
-Visual Studio   |
-Python 3        | 3
-Anaconda        |
 
 #### Voorinstallatie
 
@@ -60,9 +57,8 @@ Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt richting het 
 Observaties                             | Beloning/bestraffing
 --------------------------------------- | ---------------------
 Bal komt af op agent                    | 0
-Bal collide met agent (random plaats)   | +0.2f
-Bal collide met binnenste van "vangnet" | +1.0f + einde episode
-Bal is in goal                          | -1.0f + einde episode
+Bal collide met agent                   | +1.0f
+Bal is in goal                          | -2.0f
 
 ### Spelobjecten
 
@@ -77,13 +73,7 @@ De gebruiker zelf kan doorheen de spelomgeving lopen. Het doel is om de bal vast
 
 #### Keeper (AI Agent)
 
-Gedurende het spel is de keeper de agent. Deze zal getraind worden op 3 verschillende niveau's:
-
-Niveau      | Beschrijving
------------ | ------------
-Easy        | De keeper is niet tot zijn optimale capaciteiten getraind en zal dus niet alle ballen kunnen pakken.
-Average     | De keeper is net iets beter getraind als het vorige niveau.
-Advanced    | Hier is het de bedoeling dat de keeper het beste is getraind en het moeilijker is om bij hem te kunnen scoren.
+Gedurende het spel is de keeper de agent. Deze zal getraind worden.
 
 #### Goal
 
@@ -116,8 +106,6 @@ Korte beschrijving van het script.
 #### BallSpawner.cs
 
 Korte beschrijving van het script.
-
-> Nog gedetailleerder maken: "script A zorgt ervoor dat ... wordt gebruikt door object B ..."
 
 ### One-pager
 
