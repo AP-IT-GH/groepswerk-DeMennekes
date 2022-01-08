@@ -20,7 +20,7 @@ Het concept van onze leefwereld is een spel waarbij het de bedoeling is om een d
 
 ### Samenvatting
 
-Via deze tutorial zullen wij u stapsgewijs gidsen doorheen ons eindproject van VR Experience in combinatie met Machine Learning. Tijdens het project maakten we gebruik van Unity, Anaconda en de ML-Agents package om een doelman (Agent) te laten bewegen om zo de aankomende ballen tegen te houden. Om de bal te rollen richting doel is het aangeraden gebruik te maken van een Oculus Quest. 
+Via deze tutorial zullen wij u stapsgewijs gidsen doorheen ons eindproject van VR Experience in combinatie met Machine Learning. Tijdens het project maakten we gebruik van Unity, Anaconda en de ML-Agents package om een doelman (Agent) te laten bewegen om zo de aankomende ballen tegen te houden. Om de bal te rollen richting doel is het aangeraden gebruik te maken van een Oculus Quest.
 
 Clone dit project en volg onze stappen om tot een gewenst resultaat te komen. Heel veel plezier met het uitvoeren van deze opdracht!
 
@@ -109,9 +109,13 @@ De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in d
 
 ## Resultaten
 
-> Resultaten van de training met Tensorboard afbeeldingen
+Zoals hierboven uitgelegd wordt de agent getrained. Die trainingen leveren uiteindelijk een resultaat op.
+
+Dan rest ons nog de vraag: wat kunnen we afleiden en uiteindelijk concluderen uit de resultaten?
 
 ### Tensorboard
+
+Het resultaat van de trainingsfase kun je bekijken op Tensorboard. Op de volgende afbeeldingen zie je de Tensorboard grafieken en hun beschrijving.
 
 > Tensorboard afbeeldingen
 > Beschrijving van de Tensorboard grafieken
@@ -121,6 +125,8 @@ De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in d
 > Opvallende waarnemingen tijdens het trainen
 
 ## Conclusie
+
+Tijdens dit project hebben we met behulp van Unity en Machine Learning een spel gecreëerd waarin een gebruiker met een *Oculus Quest* doelpunten kan proberen scoren in de goal van een getrainde ML Agent.
 
 > Eén zin die nog eens samenvat wat jullie hebben gedaan
 > Kort overzicht resultaten (2 á 3 zinnen zonder cijfers te vernoemen)
