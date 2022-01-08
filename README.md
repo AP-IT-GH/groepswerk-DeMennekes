@@ -46,7 +46,7 @@ Anaconda        |
 
 Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd *Super Goalie(Basic)*. Je kan deze in de asset store installeren en vervolgens toevoegen in jouw Unity project.
 
-![image1](https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png)
+![image](https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png)
 
 ### Spelverloop
 
@@ -126,6 +126,10 @@ Dan rest ons nog de vraag: wat kunnen we afleiden en uiteindelijk concluderen ui
 ### Tensorboard
 
 Het resultaat van de trainingsfase kun je observeren op Tensorboard. Op de volgende afbeeldingen zie je de Tensorboard grafieken en hun beschrijving.
+
+Legende:
+![image1](https://user-images.githubusercontent.com/35467395/148654117-7001d56f-1686-4ab4-b2b5-68830031c7b1.png)
+
 
 #### Training01
 
