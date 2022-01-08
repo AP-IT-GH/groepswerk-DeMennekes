@@ -119,17 +119,19 @@ Korte beschrijving van het script.
 
 ## Resultaten
 
-Zoals hierboven uitgelegd wordt de agent getraind op 3 verschillende niveau's. Die trainingen leverden uiteindelijk een resultaat op.
+Zoals hierboven uitgelegd wordt de agent getraind. Die trainingen leverden uiteindelijk een resultaat op.
 
 Dan rest ons nog de vraag: wat kunnen we afleiden en uiteindelijk concluderen uit de resultaten?
 
 ### Tensorboard
 
-Het resultaat van de trainingsfase kun je observeren op Tensorboard. Op de volgende afbeeldingen zie je de Tensorboard grafieken en hun beschrijving.
+Het resultaat van de trainingsfase kun je observeren op Tensorboard. We hebben in totaal zes trainingen gedaan. 
 
-Legende:
+Dit is de legende van de training-resultaten met hun run-id en bijhorende kleur op Tensorboard:
+
 ![image1](https://user-images.githubusercontent.com/35467395/148654117-7001d56f-1686-4ab4-b2b5-68830031c7b1.png)
 
+We bespreken vervolgends de Tensorboard grafieken en hun beschrijving.
 
 #### Training01
 
