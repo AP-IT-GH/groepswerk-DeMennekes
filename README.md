@@ -41,7 +41,6 @@ Visual Studio   |
 Python 3        | 3
 Anaconda        |
 
-
 #### Voorinstallatie
 
 Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd *Super Goalie(Basic)*. Je kan deze in de asset store installeren en vervolgens toevoegen in jouw Unity project.
@@ -96,7 +95,15 @@ De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in s
 
 #### Agent.cs
 
-Korte beschrijving van het script.
+De Agent.cs script bepaalt het gedrag van de Keeper. In dit script doen we het volgende:
+
+- De startpositie van de keeper instellen
+- De bewegingsrichting (links/rechts) van de keeper bepalen en andere bewegingsrichtingen uitsluiten
+- Het scorebord updaten bij elke frame
+- Acties toewijzen aan de linker en rechter pijltoetsen, zodat we als menselijke controller kunnen testen
+- De keeper links of rechts laten bewegen wanneer de Decision Requester een actie heeft gekozen voor de keeper
+- De bewegingskracht van de keeper bepalen
+- Wanneer de agent collide met de bal, dan geven we hem een beloning, verwijderen we de bal van het veld en eindigen we de episode.
 
 #### Axis.cs
 
@@ -129,7 +136,7 @@ Het resultaat van de trainingsfase kun je observeren op Tensorboard. We hebben i
 
 Dit is de legende van de training-resultaten met hun run-id en bijhorende kleur op Tensorboard:
 
-![image1](https://user-images.githubusercontent.com/35467395/148654117-7001d56f-1686-4ab4-b2b5-68830031c7b1.png)
+![image](https://user-images.githubusercontent.com/35467395/148654117-7001d56f-1686-4ab4-b2b5-68830031c7b1.png)
 
 We bespreken vervolgens de Tensorboard grafieken en hun beschrijving.
 
@@ -137,19 +144,19 @@ We bespreken vervolgens de Tensorboard grafieken en hun beschrijving.
 
 Hier is de grafiek van de eerste training te zien. Zoals verwacht is het resultaat van de eerste training ondermaads.
 
-![image2](https://user-images.githubusercontent.com/35467395/148653157-9275bce5-2ecf-44d2-8666-41bd0585d281.png)
+![image](https://user-images.githubusercontent.com/35467395/148653157-9275bce5-2ecf-44d2-8666-41bd0585d281.png)
 
 #### Training02 - Training05
 
 Trainingen 02 tot 05 bespreken we samen. Deze trainingen hebben we elke keer vroeger moeten stoppen omdat we merkten dat ze niet zo goed werkte. Om dat probleem op te lossen hebben we de hoogte van de rays en mass van de keeper aangepast. Het resultaat is op volgende afbeelding te zien.
 
-![image3](https://user-images.githubusercontent.com/35467395/148653454-367673c4-c488-43db-9d76-2506598331b2.png)
+![image](https://user-images.githubusercontent.com/35467395/148653454-367673c4-c488-43db-9d76-2506598331b2.png)
 
 #### Training06
 
 Uiteindelijk hebben we voor Training06 een stuk code toegevoegd om de force dat op de keeper staat er af te halen. Dat hebben we gedaan omdat de keeper momentum kreeg van de bal en daardoor ver weg vloog (lol). Het resultaat van Training06 kun je hier zien:
 
-![image4](https://user-images.githubusercontent.com/35467395/148653619-67518b06-84e3-4e79-a2ca-fab00f5b27c0.png)
+![image](https://user-images.githubusercontent.com/35467395/148653619-67518b06-84e3-4e79-a2ca-fab00f5b27c0.png)
 
 ## Conclusie
 
@@ -157,7 +164,7 @@ Tijdens dit project hebben we met behulp van Unity en Machine Learning een spel 
 
 Hier zie je een overzicht van de resultaten van alle zes trainingen. Het is duidelijk te zien dat de resultaten sterk uiteen lopen.
 
-![image5](https://user-images.githubusercontent.com/35467395/148652731-0238f65a-38d0-4409-a5c2-11aa68f51c96.png)
+![image](https://user-images.githubusercontent.com/35467395/148652731-0238f65a-38d0-4409-a5c2-11aa68f51c96.png)
 
 Ongeacht de "problemen" vinden we dat de we uiteindelijk met een mooi resultaat zijn geëindigd met een Agent die we eigenlijk bijna perfect kunnen noemen.
 
