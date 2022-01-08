@@ -55,7 +55,7 @@ In het spel is een speelveld voorzien voor de speler die kan deelnemen aan het s
 
 Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden.
 
-(Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden.)
+> Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden.
 
 ### Observaties, mogelijke acties en beloningen
 
@@ -81,9 +81,11 @@ De gebruiker zelf kan doorheen de spelomgeving lopen. Het doel is om de bal vast
 
 Gedurende het spel is de keeper de agent. Deze zal getraind worden op 3 verschillende niveau's:
 
-- Easy: de keeper is niet tot zijn optimale capaciteiten getraind en zal dus niet alle ballen kunnen pakken.
-- Average: de keeper is net iets beter getraind als het vorige niveau.
-- Advanced: hier is het de bedoeling dat de keeper het beste is getraind en het moeilijker is om bij hem te kunnen scoren.
+Niveau | Beschrijving
+--- | ---
+Easy    | De keeper is niet tot zijn optimale capaciteiten getraind en zal dus niet alle ballen kunnen pakken.
+Average | De keeper is net iets beter getraind als het vorige niveau.
+Advanced    | Hier is het de bedoeling dat de keeper het beste is getraind en het moeilijker is om bij hem te kunnen scoren.
 
 #### Doel
 
@@ -98,7 +100,7 @@ De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in d
 - BallDespawner.cs
 - BallSpawner.cs
 
-> Nog gedetailleerder maken: "script A wordt gebruikt door object B...
+> Nog gedetailleerder maken: "script A wordt gebruikt door object B..."
 
 ### One-pager
 
