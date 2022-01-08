@@ -131,7 +131,7 @@ Dit is de legende van de training-resultaten met hun run-id en bijhorende kleur 
 
 ![image1](https://user-images.githubusercontent.com/35467395/148654117-7001d56f-1686-4ab4-b2b5-68830031c7b1.png)
 
-We bespreken vervolgends de Tensorboard grafieken en hun beschrijving.
+We bespreken vervolgens de Tensorboard grafieken en hun beschrijving.
 
 #### Training01
 
