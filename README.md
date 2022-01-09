@@ -62,7 +62,8 @@ Bal is in goal                          | -2.0f + einde episode
 
 Onderstaande afbeelding toont de volledige hiërarchie binnen de spelobjecten met hun benaming zoals ze in deze handleiding gebruikt zullen worden.
 
-![image](https://user-images.githubusercontent.com/61239203/148678166-4d80e2f6-c15e-4394-96c6-a02a4505954d.png)
+<img src="https://user-images.githubusercontent.com/61239203/148678166-4d80e2f6-c15e-4394-96c6-a02a4505954d.png" width="300" height="300">
+
 
 Het terrein zelf bestaat uit een 3D stadion waar je als gebruiker instaat met een VR-bril (Oculus Quest).
 
