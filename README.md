@@ -42,7 +42,7 @@ ML-Agents       | 2.0.0
 
 Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd *Super Goalie(Basic)*. Je kan deze gratis in de asset store installeren en vervolgens toevoegen in jouw Unity project.
 
-<img src="https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png" width="300" height="300">
+<img src="https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png"  height="300">
 
 
 ### Het Spelverloop
