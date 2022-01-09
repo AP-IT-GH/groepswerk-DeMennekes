@@ -42,7 +42,7 @@ ML-Agents       | 2.0.0
 
 Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd *Super Goalie(Basic)*. Je kan deze gratis in de asset store installeren en vervolgens toevoegen in jouw Unity project.
 
-<img src="https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png" height="300">
+<img src="https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png" height="400">
 
 
 ### Het Spelverloop
@@ -63,25 +63,25 @@ Bal is in goal                          | -2.0f + einde episode
 
 Onderstaande afbeelding toont de volledige hiërarchie binnen de spelobjecten met hun benaming zoals ze in deze handleiding gebruikt zullen worden.
 
-<img src="https://user-images.githubusercontent.com/61239203/148678166-4d80e2f6-c15e-4394-96c6-a02a4505954d.png"  height="300">
+<img src="https://user-images.githubusercontent.com/61239203/148678166-4d80e2f6-c15e-4394-96c6-a02a4505954d.png"  height="400">
 
 
 Het terrein zelf bestaat uit een 3D stadion waar je als gebruiker instaat met een VR-bril (Oculus Quest).
 
-<img src="https://user-images.githubusercontent.com/61239203/148678455-fb543eb3-eac7-4dd6-8406-a229f2e35fbd.png"  height="300">
+<img src="https://user-images.githubusercontent.com/61239203/148678455-fb543eb3-eac7-4dd6-8406-a229f2e35fbd.png"  height="400">
 
 #### Player
 
 Het doel is om de bal vast te nemen en proberen te scoren bij de getrainde keeper, dit doe je door de bal vast te nemen met de gripbutton en vervolgens te gooien of rollen door middel van het loslaten van de gripbutton.
 
-<img src="https://user-images.githubusercontent.com/61239203/148678568-56daf894-d4ed-4f7e-9936-65c16c3eedd1.png" width="300" height="300">
+<img src="https://user-images.githubusercontent.com/61239203/148678568-56daf894-d4ed-4f7e-9936-65c16c3eedd1.png" height="400">
 
 
 #### Keeper (AI Agent)
 
 Gedurende het spel is de keeper de agent. Deze zal getraind worden. 
 
-<img src="https://user-images.githubusercontent.com/61239203/148678079-02aea323-77ce-4b4b-a41d-c0cff896834f.png"  height="300">
+<img src="https://user-images.githubusercontent.com/61239203/148678079-02aea323-77ce-4b4b-a41d-c0cff896834f.png"  height="400">
 
 
 #### Goal
