@@ -44,21 +44,19 @@ Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit 
 
 ![image](https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png)
 
-### Spelverloop
+### Het Spelverloop
 
 In het spel is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een *Oculus Quest*. Als gebruiker kan je jezelf verplaatsen doorheen het terrein.
 
 Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden.
-
-> Er is de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren, aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden.
 
 ### Observaties, mogelijke acties en beloningen
 
 Observaties                             | Beloning/bestraffing
 --------------------------------------- | ---------------------
 Bal komt af op agent                    | 0
-Bal collide met agent                   | +1.0f
-Bal is in goal                          | -2.0f
+Bal collide met agent                   | +1.0f + einde episode
+Bal is in goal                          | -2.0f + einde episode
 
 ### Spelobjecten
 
@@ -81,36 +79,71 @@ Het doel van het spel is om in de goal te kunnen scoren als speler. Dit gebeurt 
 
 ### Gedragingen
 
-De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in scripts. Hier beschrijven we welke scripts bij welke objecten horen en wat de gedragingen van de objecten dus precies zijn.
+De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in scripts. Hier beschrijven we welke scripts bij welke objecten horen en wat de gedragingen van de objecten zelf en tegenover elkaar dus precies zijn.
 
 #### Agent.cs
 
 De Agent.cs script bepaalt het gedrag van de Keeper. In dit script doen we het volgende:
 
-- De startpositie van de keeper instellen
-- De bewegingsrichting (links/rechts) van de keeper bepalen en andere bewegingsrichtingen uitsluiten
-- Het scorebord updaten bij elke frame
-- Acties toewijzen aan de linker en rechter pijltoetsen, zodat we als menselijke controller kunnen testen
-- De keeper links of rechts laten bewegen wanneer de Decision Requester een actie heeft gekozen voor de keeper
-- De bewegingskracht van de keeper bepalen
+- De startpositie van de keeper instellen.
+- De bewegingsrichting (links/rechts) van de keeper bepalen en andere bewegingsrichtingen uitsluiten.
+- Het scorebord updaten bij elke frame.
+- Acties toewijzen aan de linker en rechter pijltoetsen, zodat we als menselijke controller kunnen testen.
+- De keeper links of rechts laten bewegen wanneer de Decision Requester een actie heeft gekozen voor de keeper.
+- De bewegingskracht van de keeper bepalen.
 - Wanneer de agent collide met de bal, dan geven we hem een beloning, verwijderen we de bal van het veld en eindigen we de episode.
 
 #### Axis.cs
 
-Korte beschrijving van het script.
-
-#### BallDespawner.cs
-
-Korte beschrijving van het script.
+Enumeratie die gebruikt wordt in de Agent.cs script.
 
 #### BallSpawner.cs
 
-Korte beschrijving van het script.
+De BallSpawner.cs bepaalt het gedrag van de voetbal. In dit script doen we het volgende:
+
+- Instantiëren van een nieuw voetbal object tegenover de keeper.
+- De positie van de bal random op de x-as bepalen.
+- Kracht/snelheid uitvoeren op de bal zodat die vooruit gaat.
+- De mogelijkheid om de bal te verwijderen van de omgeving en de spawner uit te schakelen
+
+#### BallDespawner.cs
+
+De BallDespawner.cs gebruiken we om te bepalen wat er gebeurd indien de voetbal in de goal tercht komt. We doen dan het volgende:
+
+- De voetbal wordt verwijderd van het veld.
+- De keeper krijgt een bestraffing
+- Einde episode
 
 ### One-pager
 
-> Alle informatie van de one-pager
-> Indien van toepassing: waar jullie afwijken van de one-pager en waarom
+Voordat we van start gingen met het praktische gebeuren van het project hebben we een one-pager gemaakt die ons idee in kaart brengt. De one-pager zag er als volgt uit:
+
+#### Spelverloop
+
+Het doel van de fysieke speler met een controller is om de bal te laten rollen tussen de 2 doelpalen. De AI Agent staat als keeper in het doel om te verhinderen dat de gebruiker scoort. De Agent zal door middel van Machine Learning leren om zo goed mogelijk te anticiperen op de observaties. Als de Agent de bal vangt, dan krijgt hij een beloning. Als de bal in de goal terecht komt, dan krijgt hij een bestraffing.
+
+![image](https://user-images.githubusercontent.com/35467395/148664556-771386b1-5542-4e9f-b4a1-fc36289c3da8.png)
+
+#### De AI component
+
+De AI component is hier de keeper van het spel. De Agent krijgt een ray perception sensor om te observeren waar de bal zich bevindt voor de Agent en kan zich naar links/rechts bewegen en stilstaan.
+
+##### Observaties & belongingssysteem
+
+Observaties                             | Beloning/bestraffing
+--------------------------------------- | ---------------------
+Bal komt af op agent                    | 0
+Bal collide met agent (random plaats)   | +0.2f
+Bal collide met binnenste van “vangnet” | +1.0f + einde episode
+Bal is in goal                          | -1.0f + einde episode
+
+#### Het kwadrant
+
+![image](https://user-images.githubusercontent.com/35467395/148664582-ea361bba-9983-4164-a781-9ed7dcf04323.png)
+
+#### Verschil tegenover de one-pager
+
+Het grote verschil tegenover de one-pager is de aanpassing in de observaties en het beloningssysteem. Enerzijds hebben we "Bal collide met agent" en "Bal collide met binnenste van vangnet" samengevoegd. Deze twee observaties zijn nu "Bal collide met agent" met een beloning van +1.0f. Anderzijds hebben we de bestraffing van "Bal is in goal" verhoogt naar -2.0f.
 
 ## Resultaten
 
@@ -120,7 +153,7 @@ Dan rest ons nog de vraag: wat kunnen we afleiden en uiteindelijk concluderen ui
 
 ### Tensorboard
 
-Het resultaat van de trainingsfase kun je observeren op Tensorboard. We hebben in totaal zes trainingen gedaan. 
+Het resultaat van de trainingsfase kun je observeren op Tensorboard. We hebben in totaal zes trainingen gedaan.
 
 Dit is de legende van de training-resultaten met hun run-id en bijhorende kleur op Tensorboard:
 
@@ -156,4 +189,4 @@ Hier zie je een overzicht van de resultaten van alle zes trainingen. Het is duid
 
 Ongeacht de "problemen" vinden we dat de we uiteindelijk met een mooi resultaat zijn geëindigd met een Agent die we eigenlijk bijna perfect kunnen noemen.
 
-> Verbeteringen naar de toekomst toe?
+Naar de toekomst toe zou het leuk zijn de mogelijkheid te geven de moeilijkheidsgraad om te kunnen scoren te kunnen aanpassen. Dan zou de keeper getraind worden op verschillende niveaus. Dat zou de gebruiker meer opties geven en het spel meer diepte geven.
