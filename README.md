@@ -73,8 +73,6 @@ Het terrein zelf bestaat uit een 3D stadion waar je als gebruiker instaat met ee
 
 Het doel is om de bal vast te nemen en proberen te scoren bij de getrainde keeper, dit doe je door de bal vast te nemen met de gripbutton en vervolgens te gooien of rollen door middel van het loslaten van de gripbutton.
 
-![image](https://user-images.githubusercontent.com/61239203/148675532-77bd75db-e587-41a9-8ad9-dda06aeac716.png)
-
 
 #### Keeper (AI Agent)
 
