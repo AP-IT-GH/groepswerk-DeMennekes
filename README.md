@@ -76,7 +76,7 @@ Het doel is om de bal vast te nemen en proberen te scoren bij de getrainde keepe
 
 Gedurende het spel is de keeper de agent. Deze zal getraind worden. 
 
-![image](https://user-images.githubusercontent.com/61239203/148675481-07d84988-5f03-4159-8f5b-f47dbdef4e45.png)
+![image](https://user-images.githubusercontent.com/61239203/148678079-02aea323-77ce-4b4b-a41d-c0cff896834f.png)
 
 
 #### Goal
