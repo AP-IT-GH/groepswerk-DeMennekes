@@ -1,4 +1,4 @@
-# Penality Bowling
+# Penalty Bowling
 
 1. [Inleiding](#inleiding)
     - [Samenvatting](#samenvatting)
