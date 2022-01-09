@@ -66,6 +66,9 @@ Onderstaande afbeelding toont de volledige hiërarchie binnen de spelobjecten me
 
 Het terrein zelf bestaat uit een 3D stadion waar je als gebruiker instaat met een VR-bril (Oculus Quest).
 
+![image](https://user-images.githubusercontent.com/61239203/148678455-fb543eb3-eac7-4dd6-8406-a229f2e35fbd.png)
+
+
 #### Player
 
 Het doel is om de bal vast te nemen en proberen te scoren bij de getrainde keeper, dit doe je door de bal vast te nemen met de gripbutton en vervolgens te gooien of rollen door middel van het loslaten van de gripbutton.
