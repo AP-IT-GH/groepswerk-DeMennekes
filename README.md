@@ -42,7 +42,8 @@ ML-Agents       | 2.0.0
 
 Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd *Super Goalie(Basic)*. Je kan deze gratis in de asset store installeren en vervolgens toevoegen in jouw Unity project.
 
-![image](https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png)
+<img src="https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png" width="300" height="300">
+
 
 ### Het Spelverloop
 
@@ -67,8 +68,7 @@ Onderstaande afbeelding toont de volledige hiërarchie binnen de spelobjecten me
 
 Het terrein zelf bestaat uit een 3D stadion waar je als gebruiker instaat met een VR-bril (Oculus Quest).
 
-![image](https://user-images.githubusercontent.com/61239203/148678455-fb543eb3-eac7-4dd6-8406-a229f2e35fbd.png)
-
+<img src="https://user-images.githubusercontent.com/61239203/148678455-fb543eb3-eac7-4dd6-8406-a229f2e35fbd.png" width="300" height="300">
 
 #### Player
 
@@ -81,7 +81,7 @@ Het doel is om de bal vast te nemen en proberen te scoren bij de getrainde keepe
 
 Gedurende het spel is de keeper de agent. Deze zal getraind worden. 
 
-![image](https://user-images.githubusercontent.com/61239203/148678079-02aea323-77ce-4b4b-a41d-c0cff896834f.png)
+<img src="https://user-images.githubusercontent.com/61239203/148678079-02aea323-77ce-4b4b-a41d-c0cff896834f.png" width="300" height="300">
 
 
 #### Goal
