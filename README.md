@@ -40,15 +40,15 @@ ML-Agents       | 2.0.0
 
 #### Voorinstallatie
 
-Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd *Super Goalie(Basic)*. Je kan deze in de asset store installeren en vervolgens toevoegen in jouw Unity project.
+Om een mooie omgeving te creëren hebben we gebruik gemaakt van een package uit de Asset Store genaamd *Super Goalie(Basic)*. Je kan deze gratis in de asset store installeren en vervolgens toevoegen in jouw Unity project.
 
 ![image](https://user-images.githubusercontent.com/61239203/148071708-74a0d733-ed7b-4fac-add5-76a9856aa812.png)
 
 ### Het Spelverloop
 
-In het spel is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een *Oculus Quest*. Als gebruiker kan je jezelf verplaatsen doorheen het terrein.
+In het spel is een speelveld voorzien voor de speler die kan deelnemen aan het spel via een een *Oculus Quest*. 
 
-Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden.
+Het is de bedoeling dat je de voetbal vastneemt en vervolgens rolt/gooit richting het doel. In het doel zal een getrainde keeper staan die je bal zal proberen tegen te houden.
 
 ### Observaties, mogelijke acties en beloningen
 
@@ -63,11 +63,11 @@ Bal is in goal                          | -2.0f + einde episode
 Onderstaande afbeelding toont de volledige hiërarchie binnen de spelobjecten met hun benaming zoals ze in deze handleiding gebruikt zullen worden.
 > insert afbeelding
 
-Het terrein zelf bestaat uit een 3D stadion waar je doorheen kan lopen als gebruiker met een VR-bril (Oculus Quest).
+Het terrein zelf bestaat uit een 3D stadion waar je als gebruiker instaat met een VR-bril (Oculus Quest).
 
 #### Player
 
-De gebruiker zelf kan doorheen de spelomgeving lopen. Het doel is om de bal vast te nemen en proberen te scoren bij de getrainde keeper.
+Het doel is om de bal vast te nemen en proberen te scoren bij de getrainde keeper door de bal vast te nemen met de gripbutton en dan te gooien of rollen door middel van het loslaten van de gripbutton.
 
 #### Keeper (AI Agent)
 
@@ -83,7 +83,7 @@ De objecten in het spel hebben bepaalde gedragingen die gedefinieerd worden in s
 
 #### Agent.cs
 
-De Agent.cs script bepaalt het gedrag van de Keeper. In dit script doen we het volgende:
+Het Agent.cs script bepaalt het gedrag van de Keeper. In dit script doen we het volgende:
 
 - De startpositie van de keeper instellen.
 - De bewegingsrichting (links/rechts) van de keeper bepalen en andere bewegingsrichtingen uitsluiten.
@@ -95,7 +95,7 @@ De Agent.cs script bepaalt het gedrag van de Keeper. In dit script doen we het v
 
 #### Axis.cs
 
-Enumeratie die gebruikt wordt in de Agent.cs script.
+Enumeratie die gebruikt wordt in het Agent.cs script.
 
 #### BallSpawner.cs
 
