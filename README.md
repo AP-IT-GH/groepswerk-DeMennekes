@@ -120,7 +120,7 @@ Voordat we van start gingen met het praktische gebeuren van het project hebben w
 
 #### Spelverloop
 
-Het doel van de fysieke speler met een controller is om de bal te laten rollen tussen de 2 doelpalen. De AI Agent staat als keeper in het doel om te verhinderen dat de gebruiker scoort. De Agent zal door middel van Machine Learning leren om zo goed mogelijk te anticiperen op de observaties. Als de Agent de bal vangt, dan krijgt hij een beloning. Als de bal in de goal terecht komt, dan krijgt hij een bestraffing.
+Het doel van de fysieke speler met een controller is om de bal te laten rollen tussen de 2 doelpalen. De AI Agent staat als keeper in het doel om te verhinderen dat de gebruiker scoort. De Agent zal door middel van Machine Learning leren om zo goed mogelijk te anticiperen op de observaties. Als de Agent de bal vangt, dan krijgt hij een beloning. Als de bal in de goal terecht komt, dan krijgt hij een bestraffing. Er is ook de mogelijkheid om de moeilijkheidsgraad om te kunnen scoren aan te passen. Dan zal de keeper beter getraind zijn en steeds vaker de bal tegenhouden.
 
 ![image](https://user-images.githubusercontent.com/35467395/148664556-771386b1-5542-4e9f-b4a1-fc36289c3da8.png)
 
@@ -144,6 +144,16 @@ Bal is in goal                          | -1.0f + einde episode
 #### Verschil tegenover de one-pager
 
 Het grote verschil tegenover de one-pager is de aanpassing in de observaties en het beloningssysteem. Enerzijds hebben we "Bal collide met agent" en "Bal collide met binnenste van vangnet" samengevoegd. Deze twee observaties zijn nu "Bal collide met agent" met een beloning van +1.0f. Anderzijds hebben we de bestraffing van "Bal is in goal" verhoogt naar -2.0f.
+
+Ook hadden we graag nog de moeilijkheidsgraad willen toevoegen aan het spel door verschillende niveau's te implementeren:
+
+Niveau      | Beschrijving
+----------- | ------------
+Easy        | De keeper is niet tot zijn optimale capaciteiten getraind en zal dus niet alle ballen kunnen pakken.
+Average     | De keeper is net iets beter getraind als het vorige niveau.
+Advanced    | Hier is het de bedoeling dat de keeper het beste is getraind en het moeilijker is om bij hem te kunnen scoren.
+
+Deze moeilijkheidsgraad hebben we niet kunnen implementeren omdat we geen tijd hadden om meerdere AI's te trainen op verschillende niveau's.
 
 ## Resultaten
 
@@ -189,4 +199,4 @@ Hier zie je een overzicht van de resultaten van alle zes trainingen. Het is duid
 
 Ongeacht de "problemen" vinden we dat de we uiteindelijk met een mooi resultaat zijn geëindigd met een Agent die we eigenlijk bijna perfect kunnen noemen.
 
-Naar de toekomst toe zou het leuk zijn de mogelijkheid te geven de moeilijkheidsgraad om te kunnen scoren te kunnen aanpassen. Dan zou de keeper getraind worden op verschillende niveaus. Dat zou de gebruiker meer opties geven en het spel meer diepte geven.
+Naar de toekomst toe zou het leuk zijn toch nog de mogelijkheid te geven de moeilijkheidsgraad om te kunnen scoren te kunnen aanpassen. Dat zou de gebruiker meer opties geven en het spel meer diepte geven.
