@@ -24,6 +24,7 @@ public class Agent : Unity.MLAgents.Agent
     private Vector3 agentPosition;
     private Vector3 defaultVector3 = new Vector3(0.0f, 0.0f, 0.0f);
     private const string ENEMYTAG = "Ball";
+    private float score = 0f;
 
     public BallSpawner spawner;
 
@@ -61,6 +62,7 @@ public class Agent : Unity.MLAgents.Agent
 
     public override void OnEpisodeBegin()
     {
+        AddReward(score);       // Weghalen wanneer je aan het trainen bent
         ResetAgent();
         spawner.SpawnBall();
     }
@@ -213,6 +215,7 @@ public class Agent : Unity.MLAgents.Agent
     public void RewardAgent(float reward)
     {
         // Debug.Log("Rewarding " + reward + " to agent.");
+        score += reward;
         AddReward(reward);
     }
 }
