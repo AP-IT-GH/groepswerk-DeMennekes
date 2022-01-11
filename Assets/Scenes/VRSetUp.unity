@@ -490,9 +490,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100018, guid: e0b286e17ae0ae14f9225359200e999b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100034, guid: e0b286e17ae0ae14f9225359200e999b, type: 3}
       propertyPath: m_Name
       value: SoccerStadium
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: e0b286e17ae0ae14f9225359200e999b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2043
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: e0b286e17ae0ae14f9225359200e999b, type: 3}
       propertyPath: m_RootOrder
