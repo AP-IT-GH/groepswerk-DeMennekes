@@ -28,7 +28,7 @@ public class BallSpawner : MonoBehaviour
             go.transform.SetParent(this.transform);
 
             isActive = false;
-            GiveForce(go);
+            // GiveForce(go);
         }
     }
 
