@@ -214,6 +214,22 @@ PrefabInstance:
       propertyPath: RewardOnGoal
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1487016666374184546, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.916
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487016666374184546, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.2861176
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487016666374184546, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5821
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487016666374184546, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.8687
+      objectReference: {fileID: 0}
     - target: {fileID: 3157016943209104240, guid: 3e68e68dd1a0e8444aea03eda0d7a3e0, type: 3}
       propertyPath: RewardOnCatch
       value: 0
